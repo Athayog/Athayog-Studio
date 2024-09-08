@@ -4,6 +4,8 @@ import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import type { Metadata } from "next";
 import { Josefin_Sans } from "next/font/google";
+import Navbar from "./components/ui/common/Navigation/Index";
+import CssBaseline from "@mui/material/CssBaseline";
 
 const josefin = Josefin_Sans({ subsets: ["latin"] });
 
@@ -21,7 +23,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${josefin.className}`}>
         <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Navbar />
+            {children}
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>

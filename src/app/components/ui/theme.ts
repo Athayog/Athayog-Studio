@@ -2,6 +2,7 @@
 import { createTheme } from "@mui/material/styles";
 import { pallete } from "@/app/components/ui/pallete";
 import { button } from "./elements/button";
+import { appBar } from "./elements/appBar";
 
 const theme = createTheme({
   typography: {
@@ -10,6 +11,7 @@ const theme = createTheme({
   palette: pallete,
   components: {
     ...button,
+    ...appBar,
   },
 });
 
