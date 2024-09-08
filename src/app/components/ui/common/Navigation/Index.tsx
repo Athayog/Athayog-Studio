@@ -104,6 +104,14 @@ const Navbar: React.FC = () => {
                                         anchorEl={anchorEl}
                                         open={Boolean(anchorEl)}
                                         onClose={handleClose}
+                                        sx={{
+                                            '& .MuiPaper-root': {
+                                                borderRadius: '8px',
+                                                color: 'white',
+                                                backgroundColor:
+                                                    'rgba(0, 0, 0, 0.8)', // Adjust the background color here
+                                            },
+                                        }}
                                         MenuListProps={{
                                             'aria-labelledby': `submenu-button-${index}`,
                                         }}
