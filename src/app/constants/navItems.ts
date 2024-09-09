@@ -1,6 +1,3 @@
-// src/types/navItems.ts
-
-// Define the type for a navigation item
 export interface NavItem {
     label: string;
     path?: string;
@@ -8,7 +5,6 @@ export interface NavItem {
     children?: NavItem[];
 }
 
-// Example of navItems with the defined type
 export const navItems: NavItem[] = [
     { label: 'Home', path: '/', type: 'nav' },
     { label: 'Who We Are', path: '/who-we-are', type: 'nav' },

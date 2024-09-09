@@ -6,10 +6,10 @@ import { Box, Menu, Button, Toolbar, AppBar } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { navItems } from '@/app/constants/navItems';
-import { renderMenuItems } from '@/app/components/ui/common/Navigation/RenderMenuItems';
-import Logo from '@/app/images/Logo.png';
-import theme from '@/app/components/ui/theme';
+import { navItems } from '@/constants/navItems';
+import { renderMenuItems } from '@/components/ui/common/Navigation/RenderMenuItems';
+import Logo from '@/images/Logo.png';
+import theme from '@/components/ui/theme';
 
 const Navbar: React.FC = () => {
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
@@ -138,6 +138,7 @@ const Navbar: React.FC = () => {
                             backgroundColor: 'white',
                             padding: '15px, 25px',
                             width: '174px',
+                            fontWeight: '700',
                         }}
                     >
                         Get a{'  '}

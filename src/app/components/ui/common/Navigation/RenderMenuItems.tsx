@@ -1,7 +1,7 @@
 // src/utils/renderMenuItems.tsx
 
 import React from 'react';
-import { ListItemIcon, Menu, MenuItem } from '@mui/material';
+import { Menu, MenuItem } from '@mui/material';
 import Link from 'next/link';
 
 import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
