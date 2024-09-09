@@ -1,10 +1,9 @@
-// src/utils/renderMenuItems.tsx
-
 import React from 'react';
 import { Menu, MenuItem } from '@mui/material';
 import Link from 'next/link';
 
 import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
+import theme from '../../theme';
 
 interface MenuItemProps {
     label: string;
@@ -37,49 +36,60 @@ export const renderMenuItems = (
                 </Link>
             );
         } else if (type === 'menu' && children) {
-            return (
-                <React.Fragment key={index}>
-                    <MenuItem
-                        onClick={handleSubMenuClick}
-                        aria-haspopup="true"
-                        sx={{ color: 'white' }}
-                        aria-controls={`submenu-${index}`}
-                    >
-                        {label} <ArrowRightRoundedIcon />{' '}
-                    </MenuItem>
-                    <Menu
-                        id={`submenu-${index}`}
-                        anchorEl={subMenuAnchorEl}
-                        open={Boolean(subMenuAnchorEl)}
-                        anchorOrigin={{
-                            vertical: 'center',
-                            horizontal: 'right',
-                        }}
-                        transformOrigin={{
-                            vertical: 'center',
-                            horizontal: 'right',
-                        }}
-                        onClose={handleClose}
-                        sx={{
-                            '& .MuiPaper-root': {
-                                borderRadius: '8px',
-                                color: 'white',
-                                backgroundColor: 'rgba(0, 0, 0, 0.8)', // Adjust the background color here
+            return [
+                <MenuItem
+                    onClick={handleSubMenuClick}
+                    aria-haspopup="true"
+                    aria-controls={`submenu-${index}`}
+                    key={`submenu-item-${index}`}
+                    sx={{
+                        color: 'white',
+                        '& .Mui-selected': {
+                            color: theme.palette.primary.main,
+                        },
+                    }}
+                >
+                    {label} <ArrowRightRoundedIcon />{' '}
+                </MenuItem>,
+                <Menu
+                    id={`submenu-${index}`}
+                    anchorEl={subMenuAnchorEl}
+                    open={Boolean(subMenuAnchorEl)}
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right',
+                    }}
+                    transformOrigin={{
+                        vertical: 'center',
+                        horizontal: 'left',
+                    }}
+                    onClose={handleClose}
+                    sx={{
+                        '& .MuiPaper-root': {
+                            borderRadius: '8px',
+                            color: 'white',
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            marginLeft: '10px',
+                            '& .MuiMenuItem-root': {
+                                '&:active': {
+                                    color: theme.palette.primary.main,
+                                },
                             },
-                        }}
-                        MenuListProps={{
-                            'aria-labelledby': `submenu-button-${index}`,
-                        }}
-                    >
-                        {renderMenuItems(
-                            children,
-                            handleClose,
-                            handleSubMenuClick,
-                            subMenuAnchorEl
-                        )}
-                    </Menu>
-                </React.Fragment>
-            );
+                        },
+                    }}
+                    MenuListProps={{
+                        'aria-labelledby': `submenu-button-${index}`,
+                    }}
+                    key={`submenu-menu-${index}`}
+                >
+                    {renderMenuItems(
+                        children,
+                        handleClose,
+                        handleSubMenuClick,
+                        subMenuAnchorEl
+                    )}
+                </Menu>,
+            ];
         }
     });
 };
