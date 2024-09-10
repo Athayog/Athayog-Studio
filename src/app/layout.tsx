@@ -1,11 +1,11 @@
-import '@/globals.css';
 import theme from '@/components/ui/theme';
+import '@/globals.css';
 import { ThemeProvider } from '@mui/material';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import CssBaseline from '@mui/material/CssBaseline';
 import type { Metadata } from 'next';
 import { Josefin_Sans } from 'next/font/google';
 import Navbar from './components/ui/common/Navigation/Index';
-import CssBaseline from '@mui/material/CssBaseline';
 
 const josefin = Josefin_Sans({ subsets: ['latin'] });
 

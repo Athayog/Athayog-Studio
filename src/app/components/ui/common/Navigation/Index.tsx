@@ -1,27 +1,24 @@
-// src/components/Navbar.tsx
-
 'use client';
-import React, { useState } from 'react';
-import { Box, Menu, Button, Toolbar, AppBar } from '@mui/material';
+import { RenderMenuItems } from '@/components/ui/common/Navigation/RenderMenuItems';
+import { Menu, MenuButton, NavContainer, NavLinkButton, Toolbar, TrialButton } from '@/components/ui/common/Navigation/styles/Index';
+import theme from '@/components/ui/theme';
+import { navItems } from '@/constants/navItems';
+import Logo from '@/images/Logo.png';
+
+import { AppBar, Box, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { navItems } from '@/constants/navItems';
-import { renderMenuItems } from '@/components/ui/common/Navigation/RenderMenuItems';
-import Logo from '@/images/Logo.png';
-import theme from '@/components/ui/theme';
+import React, { useEffect, useState } from 'react';
+import MobileDrawer from './MobileDrawer';
 
 const Navbar: React.FC = () => {
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-    const [subMenuAnchorEl, setSubMenuAnchorEl] = useState<HTMLElement | null>(
-        null
-    );
+    const [subMenuAnchorEl, setSubMenuAnchorEl] = useState<HTMLElement | null>(null);
     const pathname = usePathname();
+    const isMdDown = useMediaQuery(theme.breakpoints.down('md'));
 
-    const handleClick = (
-        event: React.MouseEvent<HTMLElement>,
-        children?: unknown[]
-    ) => {
+    const handleClick = (event: React.MouseEvent<HTMLElement>, children?: unknown[]) => {
         setAnchorEl(event.currentTarget);
         if (children) {
             setSubMenuAnchorEl(null);
@@ -37,122 +34,69 @@ const Navbar: React.FC = () => {
         setSubMenuAnchorEl(null);
     };
 
+    useEffect(() => {
+        console.log('as', isMdDown);
+    }, [isMdDown]);
+
     return (
         <AppBar position="fixed" color="transparent">
-            <Toolbar
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                }}
-            >
-                <Box>
-                    <Image
-                        src={Logo}
-                        height={67}
-                        width={67}
-                        alt="athayog logo"
-                    />
+            <Toolbar>
+                <Box
+                    sx={{
+                        width: { xs: 52, sm: 52, md: 52 },
+                        height: { xs: 52, sm: 52, md: 52 },
+                    }}
+                >
+                    <Image src={Logo} alt="athayog logo" width={67} height={67} style={{ width: '100%', height: 'auto' }} />
                 </Box>
 
-                <Box sx={{ display: 'flex', gap: 4 }}>
-                    {navItems.map(({ label, path, type, children }, index) => {
-                        if (type === 'nav') {
-                            return (
-                                <Link
-                                    href={path ? path : '/'}
-                                    passHref={true}
-                                    key={index}
-                                >
-                                    <Button
-                                        variant="text"
-                                        sx={{
-                                            fontSize: '18px',
-                                            color:
-                                                pathname === path
-                                                    ? theme.palette.primary.main
-                                                    : 'white',
-                                        }}
-                                    >
-                                        {label}
-                                    </Button>
-                                </Link>
-                            );
-                        } else if (type === 'menu' && children) {
-                            return (
-                                <React.Fragment key={index}>
-                                    <Button
-                                        variant="text"
-                                        sx={{
-                                            color: 'white',
-                                            fontSize: '18px',
-                                        }}
-                                        aria-controls={
-                                            anchorEl
-                                                ? `submenu-${index}`
-                                                : undefined
-                                        }
-                                        aria-haspopup="true"
-                                        onClick={(event) =>
-                                            handleClick(event, children)
-                                        }
-                                    >
-                                        {label}
-                                    </Button>
-                                    <Menu
-                                        id={`submenu-${index}`}
-                                        anchorEl={anchorEl}
-                                        open={Boolean(anchorEl)}
-                                        onClose={handleClose}
-                                        sx={{
-                                            '& .MuiPaper-root': {
-                                                borderRadius: '8px',
-                                                color: 'white',
-                                                backgroundColor:
-                                                    'rgba(0, 0, 0, 0.8)', // Adjust the background color here
-                                            },
-                                        }}
-                                        MenuListProps={{
-                                            'aria-labelledby': `submenu-button-${index}`,
-                                        }}
-                                    >
-                                        {renderMenuItems(
-                                            children,
-                                            handleClose,
-                                            handleSubMenuClick,
-                                            subMenuAnchorEl
-                                        )}
-                                    </Menu>
-                                </React.Fragment>
-                            );
-                        }
-                    })}
-                </Box>
+                {!isMdDown && (
+                    <>
+                        <NavContainer>
+                            {navItems.map(({ label, path, type, children }, index) => {
+                                if (type === 'nav') {
+                                    return (
+                                        <Link href={path ? path : '/'} passHref={true} key={index}>
+                                            <NavLinkButton variant="text" pathname={pathname} path={path ? path : '/'}>
+                                                {label}
+                                            </NavLinkButton>
+                                        </Link>
+                                    );
+                                } else if (type === 'menu' && children) {
+                                    return (
+                                        <React.Fragment key={index}>
+                                            <MenuButton variant="text" aria-controls={anchorEl ? `submenu-${index}` : undefined} aria-haspopup="true" onClick={(event) => handleClick(event, children)}>
+                                                {label}
+                                            </MenuButton>
+                                            <Menu
+                                                id={`submenu-${index}`}
+                                                anchorEl={anchorEl}
+                                                open={Boolean(anchorEl)}
+                                                onClose={handleClose}
+                                                MenuListProps={{
+                                                    'aria-labelledby': `submenu-button-${index}`,
+                                                }}
+                                            >
+                                                {RenderMenuItems(children, handleClose, handleSubMenuClick, subMenuAnchorEl)}
+                                            </Menu>
+                                        </React.Fragment>
+                                    );
+                                }
+                            })}
+                        </NavContainer>
 
-                <Box>
-                    <Button
-                        variant="text"
-                        sx={{
-                            fontSize: '18px',
-                            color: 'black',
-                            backgroundColor: 'white',
-                            padding: '15px, 25px',
-                            width: '174px',
-                            fontWeight: '700',
-                        }}
-                    >
-                        Get a{'  '}
-                        <span
-                            style={{
-                                color: theme.palette.primary.main,
-                                marginLeft: '5px',
-                            }}
-                        >
-                            {'  '}
-                            Free Trial
-                        </span>
-                    </Button>
-                </Box>
+                        <Box>
+                            <TrialButton variant="text">
+                                Get a{'  '}
+                                <span>
+                                    {'  '}
+                                    Free Trial
+                                </span>
+                            </TrialButton>
+                        </Box>
+                    </>
+                )}
+                {isMdDown && <MobileDrawer />}
             </Toolbar>
         </AppBar>
     );

@@ -12,25 +12,12 @@ interface MenuItemProps {
     children?: MenuItemProps[];
 }
 
-export const renderMenuItems = (
-    items: MenuItemProps[],
-    handleClose: () => void,
-    handleSubMenuClick: (event: React.MouseEvent<HTMLElement>) => void,
-    subMenuAnchorEl: HTMLElement | null
-) => {
+export const RenderMenuItems = (items: MenuItemProps[], handleClose: () => void, handleSubMenuClick: (event: React.MouseEvent<HTMLElement>) => void, subMenuAnchorEl: HTMLElement | null) => {
     return items.map(({ label, path, type, children }, index) => {
         if (type === 'nav') {
             return (
-                <Link
-                    href={path || '#'}
-                    passHref
-                    key={index}
-                    style={{ textDecoration: 'none' }}
-                >
-                    <MenuItem
-                        sx={{ color: 'white', textDecoration: 'none' }}
-                        onClick={handleClose}
-                    >
+                <Link href={path || '#'} passHref key={index} style={{ textDecoration: 'none' }}>
+                    <MenuItem sx={{ color: 'white', textDecoration: 'none' }} onClick={handleClose}>
                         {label}
                     </MenuItem>
                 </Link>
@@ -82,12 +69,7 @@ export const renderMenuItems = (
                     }}
                     key={`submenu-menu-${index}`}
                 >
-                    {renderMenuItems(
-                        children,
-                        handleClose,
-                        handleSubMenuClick,
-                        subMenuAnchorEl
-                    )}
+                    {RenderMenuItems(children, handleClose, handleSubMenuClick, subMenuAnchorEl)}
                 </Menu>,
             ];
         }
