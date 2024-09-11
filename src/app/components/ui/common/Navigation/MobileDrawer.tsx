@@ -1,70 +1,115 @@
-import { Drawer, DrawerContent, List, NavLinkButton } from '@/components/ui/common/Navigation/styles/MobileDrawer';
-import theme from '@/components/ui/theme';
+import Link from 'next/link';
+import Image from 'next/image';
+import React, { useState } from 'react';
+import { Close } from '@mui/icons-material';
+import { usePathname } from 'next/navigation';
 import { navItems } from '@/constants/navItems';
 import NavMenuMobile from '@/images/NavMenuMobile.svg';
-import { Close } from '@mui/icons-material';
-import { Collapse, IconButton, ListItem, ListItemText } from '@mui/material';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import * as React from 'react';
+import { Collapse, ListItem, ListItemText } from '@mui/material';
+import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
+import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
+import { Drawer, Divider, DrawerContent, List, NavLinkButton, DrawerParent, IconButton, DrawerNavContainer, TrialButton } from '@/components/ui/common/Navigation/styles/MobileDrawer';
 
 export default function MobileDrawer() {
-    const [open, setOpen] = React.useState(false);
-    const [menuOpen, setMenuOpen] = React.useState(false);
-
-    const toggleDrawer = (newOpen: boolean) => () => {
-        setOpen(newOpen);
-    };
-
+    const [open, setOpen] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [subMenuOpen, setSubMenuOpen] = useState(false);
     const pathname = usePathname();
 
+    const handleDrawerOpen = () => setOpen(true);
+    const handleDrawerClose = () => setOpen(false);
+
     const DrawerList = (
-        <DrawerContent role="presentation" onClick={toggleDrawer(false)}>
-            <List>
-                {navItems.map(({ label, path, type, children }, index) => {
-                    if (type === 'nav') {
-                        return (
-                            <Link href={path ? path : '/'} passHref={true} key={index}>
-                                <NavLinkButton pathname={pathname} path={path ? path : '/'}>
-                                    {label}
-                                </NavLinkButton>
-                            </Link>
-                        );
-                    } else if (type === 'menu' && children) {
-                        return (
-                            <React.Fragment key={index}>
-                                <NavLinkButton pathname={pathname} path={path ? path : '/'} onClick={() => setMenuOpen(!menuOpen)}>
-                                    {label}
-                                </NavLinkButton>
-                                <Collapse in={menuOpen} timeout="auto" unmountOnExit>
-                                    <List disablePadding>
-                                        {children.map(({ label: childLabel, path: childPath }, childIndex) => (
-                                            <ListItem key={childIndex} sx={{ pl: 4 }}>
-                                                <Link href={childPath ? childPath : '/'} passHref={true}>
-                                                    <ListItemText primary={childLabel} />
-                                                </Link>
-                                            </ListItem>
-                                        ))}
-                                    </List>
-                                </Collapse>
-                            </React.Fragment>
-                        );
-                    }
-                })}
-            </List>
-            <IconButton sx={{ color: theme.palette.primary.main }}>
-                <Close />
-            </IconButton>
+        <DrawerContent role="presentation">
+            <DrawerNavContainer>
+                <List active={false}>
+                    {navItems.map(({ label, path, type, children }, index) => {
+                        if (type === 'nav') {
+                            return (
+                                <Link href={path ? path : '/'} passHref={true} key={index} onClick={handleDrawerOpen}>
+                                    <NavLinkButton pathname={pathname} path={path ? path : '/'}>
+                                        {label}
+                                    </NavLinkButton>
+                                    <Divider />
+                                </Link>
+                            );
+                        } else if (type === 'menu' && children) {
+                            return (
+                                <React.Fragment key={index}>
+                                    <NavLinkButton pathname={pathname} path={path ? path : '/'} onClick={() => setMenuOpen(!menuOpen)}>
+                                        {label}
+                                        {menuOpen ? <ArrowDropDownRoundedIcon /> : <ArrowRightRoundedIcon />}
+                                    </NavLinkButton>
+                                    <Divider />
+                                    <Collapse in={menuOpen} timeout="auto" unmountOnExit>
+                                        <List active={true} disablePadding>
+                                            {children.map(({ label: childLabel, path: childPath, children }, childIndex) => {
+                                                if (children) {
+                                                    return (
+                                                        <React.Fragment key={childIndex}>
+                                                            <ListItem onClick={() => setSubMenuOpen(!subMenuOpen)}>
+                                                                {childLabel} {subMenuOpen ? <ArrowDropDownRoundedIcon /> : <ArrowRightRoundedIcon />}
+                                                            </ListItem>
+                                                            <Divider />
+                                                            <Collapse in={subMenuOpen} timeout="auto" unmountOnExit>
+                                                                <List active={true} disablePadding>
+                                                                    {children.map(({ label: grandChildLabel, path: grandChildPath }, grandChildIndex) => {
+                                                                        return (
+                                                                            <React.Fragment key={grandChildIndex}>
+                                                                                <ListItem sx={{ ml: 4 }}>
+                                                                                    <Link href={grandChildPath ? grandChildPath : '/'} passHref={true}>
+                                                                                        <ListItemText primary={grandChildLabel} />
+                                                                                    </Link>
+                                                                                </ListItem>
+                                                                                <Divider />
+                                                                            </React.Fragment>
+                                                                        );
+                                                                    })}
+                                                                </List>
+                                                            </Collapse>
+                                                        </React.Fragment>
+                                                    );
+                                                }
+                                                return (
+                                                    <React.Fragment key={childIndex}>
+                                                        <ListItem sx={{ ml: 4 }}>
+                                                            <Link href={childPath ? childPath : '/'} passHref={true} onClick={handleDrawerOpen}>
+                                                                <ListItemText primary={childLabel} />
+                                                            </Link>
+                                                        </ListItem>
+                                                        <Divider />
+                                                    </React.Fragment>
+                                                );
+                                            })}
+                                        </List>
+                                    </Collapse>
+                                </React.Fragment>
+                            );
+                        }
+                    })}
+                </List>
+                <IconButton onClick={handleDrawerClose}>
+                    <Close />
+                </IconButton>
+            </DrawerNavContainer>
+
+            <TrialButton variant="text">
+                {' '}
+                Get a{'  '}
+                <span>
+                    {'  '}
+                    Free Trial
+                </span>
+            </TrialButton>
         </DrawerContent>
     );
 
     return (
-        <>
-            <Image onClick={toggleDrawer(true)} src={NavMenuMobile} alt={'Menu'} />
-            <Drawer anchor="top" open={open} onClose={toggleDrawer(true)}>
+        <DrawerParent>
+            <Image onClick={handleDrawerOpen} src={NavMenuMobile} alt={'Menu'} />
+            <Drawer variant="persistent" anchor="top" open={open}>
                 {DrawerList}
             </Drawer>
-        </>
+        </DrawerParent>
     );
 }

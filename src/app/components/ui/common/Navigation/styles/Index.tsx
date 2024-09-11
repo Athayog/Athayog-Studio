@@ -1,21 +1,18 @@
-import {
-    Box,
-    Button,
-    ButtonProps,
-    Toolbar as MuiToolbar,
-    styled,
-    Menu as MuiMenu,
-} from '@mui/material';
+import { Box, Button, ButtonProps, Toolbar as MuiToolbar, styled, Menu as MuiMenu } from '@mui/material';
 
 export const Toolbar = styled(MuiToolbar)(() => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+    padding: '0px',
 }));
 
 export const NavContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
     gap: '30px',
+    [theme.breakpoints.down('md')]: {
+        display: 'none',
+    },
     [theme.breakpoints.up('lg')]: {
         gap: '60px',
     },
@@ -56,5 +53,8 @@ export const TrialButton = styled(Button)(({ theme }) => ({
     span: {
         color: theme.palette.primary.main,
         marginLeft: '5px',
+    },
+    [theme.breakpoints.down('md')]: {
+        display: 'none',
     },
 }));

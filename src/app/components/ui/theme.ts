@@ -3,12 +3,14 @@ import { createTheme } from '@mui/material/styles';
 import { pallete } from '@/components/ui/pallete';
 import { button } from './elements/button';
 import { appBar } from './elements/appBar';
+import { divider } from './elements/divider';
 
 const theme = createTheme({
     typography: {
         fontFamily: 'inherit',
     },
     palette: pallete,
+
     breakpoints: {
         values: {
             xs: 0,
@@ -21,6 +23,7 @@ const theme = createTheme({
     components: {
         ...button,
         ...appBar,
+        ...divider,
     },
 });
 

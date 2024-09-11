@@ -11,6 +11,7 @@ export const navItems: NavItem[] = [
     {
         label: 'What We Offer',
         type: 'menu',
+        path: '/what-we-offer',
         children: [
             { label: 'Group Class', path: '/group-class', type: 'nav' },
             {
@@ -22,6 +23,7 @@ export const navItems: NavItem[] = [
             {
                 label: 'Yoga Academy',
                 type: 'menu',
+                path: '/yoga-academy',
                 children: [
                     { label: 'Residential', path: '/residential', type: 'nav' },
                     {
