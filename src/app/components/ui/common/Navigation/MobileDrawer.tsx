@@ -8,7 +8,17 @@ import NavMenuMobile from '@/images/NavMenuMobile.svg';
 import { Collapse, ListItem, ListItemText } from '@mui/material';
 import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
-import { Drawer, Divider, DrawerContent, List, NavLinkButton, DrawerParent, IconButton, DrawerNavContainer, TrialButton } from '@/components/ui/common/Navigation/styles/MobileDrawer';
+import {
+    Drawer,
+    Divider,
+    DrawerContent,
+    List,
+    NavLinkButton,
+    DrawerParent,
+    IconButton,
+    DrawerNavContainer,
+    TrialButton,
+} from '@/components/ui/common/Navigation/styles/MobileDrawer';
 
 export default function MobileDrawer() {
     const [open, setOpen] = useState(false);
@@ -36,51 +46,91 @@ export default function MobileDrawer() {
                         } else if (type === 'menu' && children) {
                             return (
                                 <React.Fragment key={index}>
-                                    <NavLinkButton pathname={pathname} path={path ? path : '/'} onClick={() => setMenuOpen(!menuOpen)}>
+                                    <NavLinkButton
+                                        pathname={pathname}
+                                        path={path ? path : '/'}
+                                        onClick={() => setMenuOpen(!menuOpen)}
+                                    >
                                         {label}
                                         {menuOpen ? <ArrowDropDownRoundedIcon /> : <ArrowRightRoundedIcon />}
                                     </NavLinkButton>
                                     <Divider />
                                     <Collapse in={menuOpen} timeout="auto" unmountOnExit>
                                         <List active={true} disablePadding>
-                                            {children.map(({ label: childLabel, path: childPath, children }, childIndex) => {
-                                                if (children) {
+                                            {children.map(
+                                                ({ label: childLabel, path: childPath, children }, childIndex) => {
+                                                    if (children) {
+                                                        return (
+                                                            <React.Fragment key={childIndex}>
+                                                                <ListItem onClick={() => setSubMenuOpen(!subMenuOpen)}>
+                                                                    {childLabel}{' '}
+                                                                    {subMenuOpen ? (
+                                                                        <ArrowDropDownRoundedIcon />
+                                                                    ) : (
+                                                                        <ArrowRightRoundedIcon />
+                                                                    )}
+                                                                </ListItem>
+                                                                <Divider />
+                                                                <Collapse in={subMenuOpen} timeout="auto" unmountOnExit>
+                                                                    <List active={true} disablePadding>
+                                                                        {children.map(
+                                                                            (
+                                                                                {
+                                                                                    label: grandChildLabel,
+                                                                                    path: grandChildPath,
+                                                                                },
+                                                                                grandChildIndex
+                                                                            ) => {
+                                                                                return (
+                                                                                    <React.Fragment
+                                                                                        key={grandChildIndex}
+                                                                                    >
+                                                                                        <ListItem sx={{ ml: 4 }}>
+                                                                                            {' '}
+                                                                                            {/* TODO: Get Rid of SX */}
+                                                                                            <Link
+                                                                                                href={
+                                                                                                    grandChildPath
+                                                                                                        ? grandChildPath
+                                                                                                        : '/'
+                                                                                                }
+                                                                                                passHref={true}
+                                                                                            >
+                                                                                                <ListItemText
+                                                                                                    primary={
+                                                                                                        grandChildLabel
+                                                                                                    }
+                                                                                                />
+                                                                                            </Link>
+                                                                                        </ListItem>
+                                                                                        <Divider />
+                                                                                    </React.Fragment>
+                                                                                );
+                                                                            }
+                                                                        )}
+                                                                    </List>
+                                                                </Collapse>
+                                                            </React.Fragment>
+                                                        );
+                                                    }
                                                     return (
                                                         <React.Fragment key={childIndex}>
-                                                            <ListItem onClick={() => setSubMenuOpen(!subMenuOpen)}>
-                                                                {childLabel} {subMenuOpen ? <ArrowDropDownRoundedIcon /> : <ArrowRightRoundedIcon />}
+                                                            <ListItem sx={{ ml: 4 }}>
+                                                                {' '}
+                                                                {/* TODO: Get Rid of SX */}
+                                                                <Link
+                                                                    href={childPath ? childPath : '/'}
+                                                                    passHref={true}
+                                                                    onClick={handleDrawerOpen}
+                                                                >
+                                                                    <ListItemText primary={childLabel} />
+                                                                </Link>
                                                             </ListItem>
                                                             <Divider />
-                                                            <Collapse in={subMenuOpen} timeout="auto" unmountOnExit>
-                                                                <List active={true} disablePadding>
-                                                                    {children.map(({ label: grandChildLabel, path: grandChildPath }, grandChildIndex) => {
-                                                                        return (
-                                                                            <React.Fragment key={grandChildIndex}>
-                                                                                <ListItem sx={{ ml: 4 }}>
-                                                                                    <Link href={grandChildPath ? grandChildPath : '/'} passHref={true}>
-                                                                                        <ListItemText primary={grandChildLabel} />
-                                                                                    </Link>
-                                                                                </ListItem>
-                                                                                <Divider />
-                                                                            </React.Fragment>
-                                                                        );
-                                                                    })}
-                                                                </List>
-                                                            </Collapse>
                                                         </React.Fragment>
                                                     );
                                                 }
-                                                return (
-                                                    <React.Fragment key={childIndex}>
-                                                        <ListItem sx={{ ml: 4 }}>
-                                                            <Link href={childPath ? childPath : '/'} passHref={true} onClick={handleDrawerOpen}>
-                                                                <ListItemText primary={childLabel} />
-                                                            </Link>
-                                                        </ListItem>
-                                                        <Divider />
-                                                    </React.Fragment>
-                                                );
-                                            })}
+                                            )}
                                         </List>
                                     </Collapse>
                                 </React.Fragment>

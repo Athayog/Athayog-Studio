@@ -8,7 +8,14 @@ import { usePathname } from 'next/navigation';
 import { navItems } from '@/constants/navItems';
 import MobileDrawer from '@/components/ui/common/Navigation/MobileDrawer';
 import { RenderMenuItems } from '@/components/ui/common/Navigation/RenderMenuItems';
-import { Menu, MenuButton, NavContainer, NavLinkButton, Toolbar, TrialButton } from '@/components/ui/common/Navigation/styles/Index';
+import {
+    Menu,
+    MenuButton,
+    NavContainer,
+    NavLinkButton,
+    Toolbar,
+    TrialButton,
+} from '@/components/ui/common/Navigation/styles/Index';
 
 const Navbar: React.FC = () => {
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
@@ -40,7 +47,13 @@ const Navbar: React.FC = () => {
                         height: { xs: 52, sm: 52, md: 52 },
                     }}
                 >
-                    <Image src={Logo} alt="athayog logo" width={67} height={67} style={{ width: '100%', height: 'auto' }} />
+                    <Image
+                        src={Logo}
+                        alt="athayog logo"
+                        width={67}
+                        height={67}
+                        style={{ width: '100%', height: 'auto' }}
+                    />
                 </Box>
 
                 <NavContainer>
@@ -56,7 +69,12 @@ const Navbar: React.FC = () => {
                         } else if (type === 'menu' && children) {
                             return (
                                 <React.Fragment key={index}>
-                                    <MenuButton variant="text" aria-controls={anchorEl ? `submenu-${index}` : undefined} aria-haspopup="true" onClick={(event) => handleClick(event, children)}>
+                                    <MenuButton
+                                        variant="text"
+                                        aria-controls={anchorEl ? `submenu-${index}` : undefined}
+                                        aria-haspopup="true"
+                                        onClick={(event) => handleClick(event, children)}
+                                    >
                                         {label}
                                     </MenuButton>
                                     <Menu
@@ -75,7 +93,6 @@ const Navbar: React.FC = () => {
                         }
                     })}
                 </NavContainer>
-
                 <Box>
                     <TrialButton variant="text">
                         Get a{'  '}

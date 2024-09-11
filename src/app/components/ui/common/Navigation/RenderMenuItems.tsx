@@ -1,9 +1,9 @@
 import React from 'react';
-import { Menu, MenuItem } from '@mui/material';
 import Link from 'next/link';
-
+import theme from '@/components/ui/theme';
+import { MenuItem } from '@mui/material';
 import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
-import theme from '../../theme';
+import { Menu } from '@/components/ui/common/Navigation/styles/RenderMenuItems';
 
 interface MenuItemProps {
     label: string;
@@ -12,7 +12,12 @@ interface MenuItemProps {
     children?: MenuItemProps[];
 }
 
-export const RenderMenuItems = (items: MenuItemProps[], handleClose: () => void, handleSubMenuClick: (event: React.MouseEvent<HTMLElement>) => void, subMenuAnchorEl: HTMLElement | null) => {
+export const RenderMenuItems = (
+    items: MenuItemProps[],
+    handleClose: () => void,
+    handleSubMenuClick: (event: React.MouseEvent<HTMLElement>) => void,
+    subMenuAnchorEl: HTMLElement | null
+) => {
     return items.map(({ label, path, type, children }, index) => {
         if (type === 'nav') {
             return (
@@ -51,19 +56,7 @@ export const RenderMenuItems = (items: MenuItemProps[], handleClose: () => void,
                         horizontal: 'left',
                     }}
                     onClose={handleClose}
-                    sx={{
-                        '& .MuiPaper-root': {
-                            borderRadius: '8px',
-                            color: 'white',
-                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                            marginLeft: '10px',
-                            '& .MuiMenuItem-root': {
-                                '&:active': {
-                                    color: theme.palette.primary.main,
-                                },
-                            },
-                        },
-                    }}
+                    sx={{}}
                     MenuListProps={{
                         'aria-labelledby': `submenu-button-${index}`,
                     }}

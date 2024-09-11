@@ -1,9 +1,9 @@
 'use client';
-import { createTheme } from '@mui/material/styles';
 import { pallete } from '@/components/ui/pallete';
-import { button } from './elements/button';
-import { appBar } from './elements/appBar';
-import { divider } from './elements/divider';
+import { createTheme } from '@mui/material/styles';
+import { button } from '@/components/ui/elements/button';
+import { appBar } from '@/components/ui/elements/appBar';
+import { divider } from '@/components/ui/elements/divider';
 
 const theme = createTheme({
     typography: {

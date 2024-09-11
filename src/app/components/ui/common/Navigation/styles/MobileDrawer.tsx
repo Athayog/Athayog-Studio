@@ -1,4 +1,14 @@
-import { Button, styled, Menu as MuiMenu, List as MuiList, Box, Drawer as MuiDrawer, ListItemButton, IconButton as MuiIconButton, Divider as MuiDivider } from '@mui/material';
+import {
+    Button,
+    styled,
+    Menu as MuiMenu,
+    List as MuiList,
+    Box,
+    Drawer as MuiDrawer,
+    ListItemButton,
+    IconButton as MuiIconButton,
+    Divider as MuiDivider,
+} from '@mui/material';
 
 export const NavLinkButton = styled(ListItemButton, {
     shouldForwardProp: (prop) => prop !== 'pathname' && prop !== 'path',
@@ -42,7 +52,6 @@ export const List = styled(MuiList, {
     borderBottom: '0px',
     borderLeft: active ? '1px' : '0px',
 
-    // Nested MUI ListItem styling
     '& .MuiListItem-root': {
         color: 'white',
         marginLeft: '0px',
