@@ -1,4 +1,4 @@
-import Index from './components/pages/home/Index';
+import HomePage from '@/app/components/pages/home/Index';
 
 export const metadata = {
     title: 'Athayog',
@@ -9,5 +9,5 @@ export const metadata = {
 };
 
 export default function Home() {
-    return <Index />;
+    return <HomePage />;
 }

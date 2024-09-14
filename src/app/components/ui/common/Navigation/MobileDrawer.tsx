@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { Close } from '@mui/icons-material';
 import { usePathname } from 'next/navigation';
-import { navItems } from '@/constants/navItems';
+import { navItems } from '@/app/constants/navItems';
 import NavMenuMobile from '@/images/NavMenuMobile.svg';
 import { Collapse, ListItem, ListItemText } from '@mui/material';
 import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
@@ -18,7 +18,7 @@ import {
     IconButton,
     DrawerNavContainer,
     TrialButton,
-} from '@/components/ui/common/Navigation/styles/MobileDrawer';
+} from '@/app/components/ui/common/Navigation/styles/MobileDrawer';
 
 export default function MobileDrawer() {
     const [open, setOpen] = useState(false);

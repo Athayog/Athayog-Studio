@@ -1,15 +1,19 @@
 import { Box, Button, ButtonProps, Toolbar as MuiToolbar, styled, Menu as MuiMenu } from '@mui/material';
 
-export const Toolbar = styled(MuiToolbar)(() => ({
+export const Toolbar = styled(MuiToolbar, {
+    shouldForwardProp: (prop) => prop !== 'navigationVariant',
+})<{ navigationVariant: string }>(({ navigationVariant }) => ({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '0px',
+    color: navigationVariant === 'light' ? 'black' : 'white',
 }));
 
 export const NavContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
     gap: '30px',
+    color: 'inherit',
     [theme.breakpoints.down('md')]: {
         display: 'none',
     },
@@ -21,24 +25,25 @@ export const NavContainer = styled(Box)(({ theme }) => ({
 interface NavLinkButtonProps extends ButtonProps {
     path: string;
     pathname: string;
+    navigationVariant: string;
 }
 
 export const NavLinkButton = styled(Button, {
-    shouldForwardProp: (prop) => prop !== 'pathname' && prop !== 'path',
-})<NavLinkButtonProps>(({ theme, pathname, path }) => ({
+    shouldForwardProp: (prop) => prop !== 'pathname' && prop !== 'path' && prop !== 'navigationVariant',
+})<NavLinkButtonProps>(({ theme, pathname, path, navigationVariant }) => ({
     fontSize: '18px',
-    color: pathname === path ? theme.palette.primary.main : 'white',
+    color: pathname === path ? theme.palette.primary.main : navigationVariant === 'light' ? 'black' : 'white',
 }));
 
 export const MenuButton = styled(Button)({
-    color: 'white',
+    color: 'inherit',
     fontSize: '18px',
 });
 
 export const Menu = styled(MuiMenu)({
     '& .MuiPaper-root': {
         borderRadius: '8px',
-        color: 'white',
+        color: 'inherit',
         backgroundColor: 'rgba(0, 0, 0, 0.8)',
     },
 });
@@ -54,6 +59,15 @@ export const TrialButton = styled(Button)(({ theme }) => ({
         color: theme.palette.primary.main,
         marginLeft: '5px',
     },
+    [theme.breakpoints.down('md')]: {
+        display: 'none',
+    },
+}));
+
+export const TrialAndAuth = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
     [theme.breakpoints.down('md')]: {
         display: 'none',
     },

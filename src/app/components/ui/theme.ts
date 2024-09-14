@@ -1,9 +1,10 @@
 'use client';
-import { pallete } from '@/components/ui/pallete';
 import { createTheme } from '@mui/material/styles';
-import { button } from '@/components/ui/elements/button';
-import { appBar } from '@/components/ui/elements/appBar';
-import { divider } from '@/components/ui/elements/divider';
+import { pallete } from '@/app/components/ui/pallete';
+import { button } from '@/app/components/ui/elements/button';
+import { appBar } from '@/app/components/ui/elements/appBar';
+import { divider } from '@/app/components/ui/elements/divider';
+import { menu } from '@/app/components/ui/elements/menu';
 
 const theme = createTheme({
     typography: {
@@ -24,6 +25,7 @@ const theme = createTheme({
         ...button,
         ...appBar,
         ...divider,
+        ...menu,
     },
 });
 

@@ -1,7 +1,13 @@
-import React from 'react';
-import Hero from '@/components/pages/home/Hero';
+'use client';
+import React, { useEffect } from 'react';
+import Hero from '@/app/components/pages/home/Hero';
+import useThemeStore from '@/store/useThemeStore';
 
-const Index = () => {
+const HomePage: React.FC = () => {
+    const { setNavigationVariant } = useThemeStore();
+    useEffect(() => {
+        setNavigationVariant('dark');
+    }, [setNavigationVariant]);
     return (
         <div>
             <Hero />
@@ -9,4 +15,4 @@ const Index = () => {
     );
 };
 
-export default Index;
+export default HomePage;

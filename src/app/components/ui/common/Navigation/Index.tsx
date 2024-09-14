@@ -1,13 +1,6 @@
 'use client';
-import Link from 'next/link';
-import Image from 'next/image';
-import Logo from '@/images/Logo.png';
-import React, { useState } from 'react';
-import { AppBar, Box } from '@mui/material';
-import { usePathname } from 'next/navigation';
-import { navItems } from '@/constants/navItems';
-import MobileDrawer from '@/components/ui/common/Navigation/MobileDrawer';
-import { RenderMenuItems } from '@/components/ui/common/Navigation/RenderMenuItems';
+import MobileDrawer from '@/app/components/ui/common/Navigation/MobileDrawer';
+import { RenderMenuItems } from '@/app/components/ui/common/Navigation/RenderMenuItems';
 import {
     Menu,
     MenuButton,
@@ -15,12 +8,24 @@ import {
     NavLinkButton,
     Toolbar,
     TrialButton,
-} from '@/components/ui/common/Navigation/styles/Index';
+    TrialAndAuth,
+} from '@/app/components/ui/common/Navigation/styles/Index';
+import { navItems } from '@/app/constants/navItems';
+import Logo from '@/images/Logo.png';
+import { AppBar, Box } from '@mui/material';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+import useThemeStore from '@/store/useThemeStore';
+import AccountMenu from '@/app/components/ui/common/Navigation/AccountMenu';
+import useAuthStore from '@/store/useAuthStore';
 
 const Navbar: React.FC = () => {
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
     const [subMenuAnchorEl, setSubMenuAnchorEl] = useState<HTMLElement | null>(null);
     const pathname = usePathname();
+    const { navigationVariant } = useThemeStore();
 
     const handleClick = (event: React.MouseEvent<HTMLElement>, children?: unknown[]) => {
         setAnchorEl(event.currentTarget);
@@ -38,22 +43,32 @@ const Navbar: React.FC = () => {
         setSubMenuAnchorEl(null);
     };
 
+    const initializeAuth = useAuthStore((state) => state.initializeAuth);
+
+    useEffect(() => {
+        const unsubscribe = initializeAuth();
+        return unsubscribe;
+    }, [initializeAuth]);
+
     return (
         <AppBar position="fixed" color="transparent">
-            <Toolbar>
+            <Toolbar navigationVariant={navigationVariant}>
                 <Box
                     sx={{
                         width: { xs: 52, sm: 52, md: 52 },
                         height: { xs: 52, sm: 52, md: 52 },
                     }}
                 >
-                    <Image
-                        src={Logo}
-                        alt="athayog logo"
-                        width={67}
-                        height={67}
-                        style={{ width: '100%', height: 'auto' }}
-                    />
+                    <Link href={'/'} passHref={true}>
+                        {' '}
+                        <Image
+                            src={Logo}
+                            alt="athayog logo"
+                            width={67}
+                            height={67}
+                            style={{ width: '100%', height: 'auto' }}
+                        />
+                    </Link>
                 </Box>
 
                 <NavContainer>
@@ -61,7 +76,12 @@ const Navbar: React.FC = () => {
                         if (type === 'nav') {
                             return (
                                 <Link href={path ? path : '/'} passHref={true} key={index}>
-                                    <NavLinkButton variant="text" pathname={pathname} path={path ? path : '/'}>
+                                    <NavLinkButton
+                                        variant="text"
+                                        pathname={pathname}
+                                        path={path ? path : '/'}
+                                        navigationVariant={navigationVariant}
+                                    >
                                         {label}
                                     </NavLinkButton>
                                 </Link>
@@ -93,15 +113,14 @@ const Navbar: React.FC = () => {
                         }
                     })}
                 </NavContainer>
-                <Box>
-                    <TrialButton variant="text">
-                        Get a{'  '}
-                        <span>
-                            {'  '}
-                            Free Trial
-                        </span>
-                    </TrialButton>
-                </Box>
+                <TrialAndAuth>
+                    <Link href={'/login'} passHref={true}>
+                        <TrialButton variant="text">
+                            Get a<span>Free Trial</span>
+                        </TrialButton>
+                    </Link>
+                    <AccountMenu />
+                </TrialAndAuth>
 
                 <MobileDrawer />
             </Toolbar>

@@ -1,6 +1,7 @@
 'use client';
-import LoginPage from '@/app/components/pages/auth/Index';
+import AccountPage from '@/app/components/pages/auth/account/Index';
 import useThemeStore from '@/store/useThemeStore';
+import { Box } from '@mui/material';
 import { useEffect } from 'react';
 
 function Page() {
@@ -9,9 +10,9 @@ function Page() {
         setNavigationVariant('light');
     }, [setNavigationVariant]);
     return (
-        <div>
-            <LoginPage />
-        </div>
+        <Box sx={{ height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <AccountPage />
+        </Box>
     );
 }
 
