@@ -6,6 +6,8 @@ import Stats from './Stats';
 import Recognition from './Recognition';
 import { LayoutContainer } from './styles/Index';
 import WhyAthayog from './WhyAthayog';
+import VideoTestimonials from './VideoTestimonials';
+import GroupClasses from './GroupClasses';
 
 const HomePage: React.FC = () => {
     const { setNavigationVariant } = useThemeStore();
@@ -19,6 +21,8 @@ const HomePage: React.FC = () => {
                 <Stats />
                 <Recognition />
                 <WhyAthayog />
+                {/* <VideoTestimonials /> */}
+                <GroupClasses />
             </LayoutContainer>
         </div>
     );

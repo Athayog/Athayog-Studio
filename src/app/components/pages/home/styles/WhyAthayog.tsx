@@ -1,8 +1,7 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-// Styled Swiper component
-export const AthayogSwiper = styled(Box)(({ theme }) => ({
+export const AthayogSwiper = styled(Box)(() => ({
     '.swiper-why': {
         '.swiper-pagination-bullet': {
             background: 'transparent',
