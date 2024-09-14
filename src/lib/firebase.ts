@@ -2,12 +2,12 @@ import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyCJJbamvIo6WxIo51tc2GoYEz7OLNcKxCw',
-    authDomain: 'development-v2-53228.firebaseapp.com',
-    projectId: 'development-v2-53228',
-    storageBucket: 'development-v2-53228.appspot.com',
-    messagingSenderId: '636676061352',
-    appId: '1:636676061352:web:0b91c208ab5be75def6a9d',
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSENGER_ID,
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -15,5 +15,3 @@ const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
 export { app, auth, googleProvider };
-
-//TODO: Move to env
