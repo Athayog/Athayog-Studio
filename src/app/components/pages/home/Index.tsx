@@ -2,6 +2,10 @@
 import React, { useEffect } from 'react';
 import Hero from '@/app/components/pages/home/Hero';
 import useThemeStore from '@/store/useThemeStore';
+import Stats from './Stats';
+import Recognition from './Recognition';
+import { LayoutContainer } from './styles/Index';
+import WhyAthayog from './WhyAthayog';
 
 const HomePage: React.FC = () => {
     const { setNavigationVariant } = useThemeStore();
@@ -11,6 +15,11 @@ const HomePage: React.FC = () => {
     return (
         <div>
             <Hero />
+            <LayoutContainer>
+                <Stats />
+                <Recognition />
+                <WhyAthayog />
+            </LayoutContainer>
         </div>
     );
 };

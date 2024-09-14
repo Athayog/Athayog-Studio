@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Close } from '@mui/icons-material';
 import { usePathname } from 'next/navigation';
 import { navItems } from '@/app/constants/navItems';
-import NavMenuMobile from '@/images/NavMenuMobile.svg';
+import NavMenuMobile from '@/app/images/NavMenuMobile.svg';
 import { Collapse, ListItem, ListItemText } from '@mui/material';
 import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';

@@ -32,7 +32,7 @@ export const NavLinkButton = styled(Button, {
     shouldForwardProp: (prop) => prop !== 'pathname' && prop !== 'path' && prop !== 'navigationVariant',
 })<NavLinkButtonProps>(({ theme, pathname, path, navigationVariant }) => ({
     fontSize: '18px',
-    color: pathname === path ? theme.palette.primary.main : navigationVariant === 'light' ? 'black' : 'white',
+    color: pathname === path ? theme.palette.primary.light : navigationVariant === 'light' ? 'black' : 'white',
 }));
 
 export const MenuButton = styled(Button)({

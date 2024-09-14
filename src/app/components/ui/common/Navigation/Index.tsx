@@ -11,7 +11,7 @@ import {
     TrialAndAuth,
 } from '@/app/components/ui/common/Navigation/styles/Index';
 import { navItems } from '@/app/constants/navItems';
-import Logo from '@/images/Logo.png';
+import Logo from '@/app/images/Logo.png';
 import { AppBar, Box } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';

@@ -11,4 +11,8 @@ export const pallete = {
         main: '#E2B102',
         dark: '#AC5F14',
     },
+    green: {
+        main: '#e6fbe3',
+        dark: '#416C27',
+    },
 };
