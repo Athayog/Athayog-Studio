@@ -20,12 +20,13 @@ import React, { useEffect, useState } from 'react';
 import useThemeStore from '@/store/useThemeStore';
 import AccountMenu from '@/app/components/ui/common/Navigation/AccountMenu';
 import useAuthStore from '@/store/useAuthStore';
+import ScrollListener from '@/hooks/ScrollListener';
 
 const Navbar: React.FC = () => {
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
     const [subMenuAnchorEl, setSubMenuAnchorEl] = useState<HTMLElement | null>(null);
     const pathname = usePathname();
-    const { navigationVariant } = useThemeStore();
+    const { navigationVariant, isScrolled } = useThemeStore();
 
     const handleClick = (event: React.MouseEvent<HTMLElement>, children?: unknown[]) => {
         setAnchorEl(event.currentTarget);
@@ -51,7 +52,16 @@ const Navbar: React.FC = () => {
     }, [initializeAuth]);
 
     return (
-        <AppBar position="fixed" color="transparent">
+        <AppBar
+            position="fixed"
+            sx={{
+                transition: 'background-color 0.8s ease-in-out', // Add transition for smooth animation
+                backgroundColor: isScrolled ? '#556940' : 'transparent', // Dynamically change based on scroll
+                boxShadow: 'none',
+                padding: '14px 20px',
+            }}
+        >
+            <ScrollListener />
             <Toolbar navigationVariant={navigationVariant}>
                 <Box
                     sx={{

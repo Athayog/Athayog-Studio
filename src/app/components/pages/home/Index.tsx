@@ -1,13 +1,19 @@
 'use client';
+import { Box } from '@mui/material';
 import React, { useEffect } from 'react';
-import Hero from '@/app/components/pages/home/Hero';
 import useThemeStore from '@/store/useThemeStore';
-import Stats from './Stats';
-import Recognition from './Recognition';
-import { LayoutContainer } from './styles/Index';
-import WhyAthayog from './WhyAthayog';
-import VideoTestimonials from './VideoTestimonials';
-import GroupClasses from './GroupClasses';
+import Hero from '@/app/components/pages/home/Hero';
+import Stats from '@/app/components/pages/home/Stats';
+import Blogs from '@/app/components/pages/home/Blogs';
+import WhyAthayog from '@/app/components/pages/home/WhyAthayog';
+import WeightLoss from '@/app/components/pages/home/WeightLoss';
+import Recognition from '@/app/components/pages/home/Recognition';
+import YogaAcademy from '@/app/components/pages/home/YogaAcademy';
+import GroupClasses from '@/app/components/pages/home/GroupClasses';
+import PersonalSessions from '@/app/components/pages/home/PersonalSessions';
+import UpcomingWorkshop from '@/app/components/pages/home/UpcomingWorkshop';
+import VideoTestimonials from '@/app/components/pages/home/VideoTestimonials';
+import { LayoutContainer, LayoutContent } from '@/app/components/pages/home/styles/Index';
 
 const HomePage: React.FC = () => {
     const { setNavigationVariant } = useThemeStore();
@@ -15,16 +21,23 @@ const HomePage: React.FC = () => {
         setNavigationVariant('dark');
     }, [setNavigationVariant]);
     return (
-        <div>
+        <Box>
             <Hero />
             <LayoutContainer>
-                <Stats />
-                <Recognition />
-                <WhyAthayog />
-                {/* <VideoTestimonials /> */}
-                <GroupClasses />
+                <LayoutContent>
+                    <Stats />
+                    <Recognition />
+                    <WhyAthayog />
+                    <VideoTestimonials />
+                    <GroupClasses />
+                    <PersonalSessions />
+                    <WeightLoss />
+                    <YogaAcademy />
+                    <UpcomingWorkshop />
+                    <Blogs />
+                </LayoutContent>
             </LayoutContainer>
-        </div>
+        </Box>
     );
 };
 

@@ -9,7 +9,6 @@ export default function Recognition() {
     return (
         <Box
             sx={{
-                marginTop: '100px',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',

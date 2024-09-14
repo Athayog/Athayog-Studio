@@ -1,11 +1,10 @@
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React from 'react';
 import CarouselSample from '@/app/images/CarouselSample.png';
 import Image from 'next/image';
+import RegisterButton from '../../ui/common/elements/button/RegisterButton';
 
-type Props = {};
-
-function GroupClasses({}: Props) {
+function GroupClasses() {
     return (
         <Box sx={{ marginTop: '100px', textAlign: 'center' }}>
             <Typography sx={{ fontSize: '48px', color: '#303030', fontWeight: '700' }}>
@@ -24,11 +23,13 @@ function GroupClasses({}: Props) {
             >
                 <Image src={CarouselSample} layout="fill" objectFit="cover" alt="Carousel Sample" />
             </Box>
-            <Typography sx={{textAlign:"center",marginTop:'30px',maxWidth:"800px"}}>
+            <Typography sx={{ textAlign: 'center', marginTop: '30px', maxWidth: '800px', margin: '30px  auto 0 auto' }}>
                 Join our group yoga sessions to improve your well-being. Connect with a supportive communityand find
                 balance in mind, body and soul. Start your journey to a healthier life with us today.
             </Typography>
-            <Button>Register Now</Button>
+            <RegisterButton variant="contained" sx={{ marginTop: '30px' }}>
+                Register Now
+            </RegisterButton>
         </Box>
     );
 }

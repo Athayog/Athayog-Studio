@@ -3,17 +3,20 @@ import React from 'react';
 import { VideoContainer, VideoParent } from './styles/VideoTestimonials';
 import Image from 'next/image';
 import CarouselSample from '@/app/images/CarouselSample.png';
+import { YouTubeEmbed } from '@next/third-parties/google';
 
 function VideoTestimonials() {
     const RING_WIDTH = '836.202px';
     const RING_HEIGHT = '400.612px';
+
+    // const videosToEmbedd = ['id1zkgBcLlY', 'mh1T62rmcY8', 'cCSNc1z2ptQ'];
     return (
-        <Box sx={{ marginTop: '100px' }}>
+        <Box sx={{ marginTop: '100px', height: '720px' }}>
             <Box sx={{ textAlign: 'center' }}>
-                <Typography sx={{ fontSize: '48px', color: '#303030', fontWeight: '700' }}>
+                <Typography variant="h2" sx={{ color: '#303030', fontWeight: '700' }}>
                     Heartfelt Testimonials:
                 </Typography>
-                <Typography sx={{ fontSize: '48px', color: '#46892D', fontWeight: '700' }}>
+                <Typography variant="h2" sx={{ color: '#46892D', fontWeight: '700' }}>
                     Why People Love Athayog Living
                 </Typography>
             </Box>
@@ -77,13 +80,13 @@ function VideoTestimonials() {
                             sx={{
                                 position: 'relative',
                                 borderRadius: '22.2px',
-                                height: '520.16px;',
-                                width: '321.626px',
+                                height: '520px',
+                                width: '321px',
                                 border: '4px solid #F8BCC0',
                                 overflow: 'hidden',
                             }}
                         >
-                            <Image src={CarouselSample} layout="fill" objectFit="cover" alt="Carousel Sample" />
+                            <YouTubeEmbed style="height: 520px;" videoid="cwvhEaSwwCw" params="controls=0" />
                         </Box>
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
