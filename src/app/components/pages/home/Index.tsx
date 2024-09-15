@@ -33,8 +33,8 @@ const HomePage: React.FC = () => {
                     <Recognition />
                     <WhyAthayog />
                     <VideoTestimonials />
-                    {/* <GroupClasses />
-                    <PersonalSessions />
+                    <GroupClasses />
+                    {/* <PersonalSessions />
                     <WeightLoss />
                     <YogaAcademy />
                     <UpcomingWorkshop />
