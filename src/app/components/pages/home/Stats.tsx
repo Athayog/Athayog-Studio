@@ -1,12 +1,15 @@
 import React from 'react';
-import { StatBox } from './styles/Stats';
-import StatsGraduateSvg from '@/app/images/stats-graduate.svg';
-import StatsAdiyogiSvg from '@/app/images/stats-adiyogi.svg';
-import StateTransformationSvg from '@/app/images/stats-transformation.svg';
-import StatsCalendarSvg from '@/app/images/stats-calendar.svg';
-import { Typography, Stack } from '@mui/material';
 import Image from 'next/image';
+import Grid from '@mui/material/Grid2';
+import { styled } from '@mui/material/styles';
+import { Typography, Paper } from '@mui/material';
+import StatsAdiyogiSvg from '@/app/images/stats-adiyogi.svg';
+import StatsGraduateSvg from '@/app/images/stats-graduate.svg';
+import StatsCalendarSvg from '@/app/images/stats-calendar.svg';
+import StateTransformationSvg from '@/app/images/stats-transformation.svg';
+import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
 
+// Define type for statistics data
 type Stat = {
     id: number;
     name: string;
@@ -14,43 +17,104 @@ type Stat = {
     icon: string;
 };
 
+// Define stats data
 const statsData: Stat[] = [
     {
         id: 1,
         name: 'Graduates',
-        count: 10,
+        count: 50,
         icon: StatsGraduateSvg,
     },
     {
         id: 2,
         name: 'Athayogis',
-        count: 10,
+        count: 850,
         icon: StatsAdiyogiSvg,
     },
     {
         id: 3,
-        name: 'Transformations',
-        count: 10,
+        name: 'Transformation',
+        count: 30,
         icon: StateTransformationSvg,
     },
     {
         id: 4,
         name: 'Events',
-        count: 10,
+        count: 20,
         icon: StatsCalendarSvg,
     },
 ];
 
+// Styled components
+const StatBox = styled(Paper)(({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: 'transparent',
+    alignItems: 'center',
+    textAlign: 'center',
+    justifyContent: 'center',
+    padding: theme.spacing(2),
+    borderRadius: theme.shape.borderRadius,
+    boxShadow: 'none',
+    height: '250px',
+    width: '200px',
+    [theme.breakpoints.down('md')]: {
+        backgroundColor: '#eff3e4',
+        borderRadius: '7.978px',
+        height: '150px',
+        width: '120px',
+    },
+}));
+
+const StatIcon = styled(Image)(({ theme }) => ({
+    width: '45px',
+    height: 'auto',
+    [theme.breakpoints.down('md')]: {
+        width: '28px',
+    },
+}));
+
+const StatCount = styled(Typography)(({ theme }) => ({
+    fontSize: '60px',
+    color: '#416c27',
+    margin: theme.spacing(1, 0),
+    [theme.breakpoints.down('md')]: {
+        fontSize: '46px',
+        margin: 0,
+    },
+}));
+
+const StatName = styled(Typography)(({ theme }) => ({
+    fontSize: '26px',
+    color: '#404040',
+    [theme.breakpoints.down('md')]: {
+        fontSize: '17px',
+    },
+}));
+
+// Component
 export default function Stats() {
     return (
-        <Stack direction="row" justifyContent="center" gap="150px" spacing={2}>
-            {statsData.map((stats) => (
-                <StatBox key={stats.id}>
-                    <Image src={stats.icon} alt={stats.name} style={{ width: '45px', height: 'auto' }} />
-                    <Typography sx={{ fontSize: '60px', color: '#416C27' }}>{stats.count}</Typography>
-                    <Typography sx={{ fontSize: '26px', color: '#404040' }}>{stats.name}</Typography>
-                </StatBox>
-            ))}
-        </Stack>
+        <SectionPadding>
+            <SectionContent>
+                <Grid
+                    container
+                    spacing={4}
+                    gap={{ xs: '20px', md: '80px', lg: '120px' }}
+                    justifyContent="center"
+                    component="div"
+                >
+                    {statsData.map((stat) => (
+                        <Grid key={stat.id} component="div">
+                            <StatBox>
+                                <StatIcon src={stat.icon} alt={stat.name} />
+                                <StatCount>{stat.count}+</StatCount>
+                                <StatName>{stat.name}</StatName>
+                            </StatBox>
+                        </Grid>
+                    ))}
+                </Grid>
+            </SectionContent>
+        </SectionPadding>
     );
 }

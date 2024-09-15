@@ -14,6 +14,10 @@ import PersonalSessions from '@/app/components/pages/home/PersonalSessions';
 import UpcomingWorkshop from '@/app/components/pages/home/UpcomingWorkshop';
 import VideoTestimonials from '@/app/components/pages/home/VideoTestimonials';
 import { LayoutContainer, LayoutContent } from '@/app/components/pages/home/styles/Index';
+import YogaEvent from './YogaEvent';
+import EmbraceWellness from './EmbraceWellness';
+import YogaArambha from './YogaArambha';
+import FAQ from './FAQ';
 
 const HomePage: React.FC = () => {
     const { setNavigationVariant } = useThemeStore();
@@ -26,7 +30,7 @@ const HomePage: React.FC = () => {
             <LayoutContainer>
                 <LayoutContent>
                     <Stats />
-                    <Recognition />
+                    {/* <Recognition />
                     <WhyAthayog />
                     <VideoTestimonials />
                     <GroupClasses />
@@ -35,6 +39,10 @@ const HomePage: React.FC = () => {
                     <YogaAcademy />
                     <UpcomingWorkshop />
                     <Blogs />
+                    <YogaEvent />
+                    <EmbraceWellness />
+                    <YogaArambha />
+                    <FAQ /> */}
                 </LayoutContent>
             </LayoutContainer>
         </Box>
