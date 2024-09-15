@@ -40,6 +40,7 @@ const HomePage: React.FC = () => {
                     <UpcomingWorkshop />
                     <Blogs />
                     <YogaEvent />
+
                     {/* <EmbraceWellness />
                     <YogaArambha />
                     <FAQ /> */}
