@@ -1,3 +1,4 @@
+import theme from '@/app/components/ui/theme';
 import { styled, TableRow as MuiTableRow, TableCell as MuiTableCell, Table as MuiTable } from '@mui/material';
 
 export const TableCell = styled(MuiTableCell)(() => ({
@@ -8,6 +9,16 @@ export const TableCell = styled(MuiTableCell)(() => ({
     '&:last-of-type': {
         borderTopRightRadius: '46px',
         borderBottomRightRadius: '46px',
+    },
+    [theme.breakpoints.down('md')]: {
+        '&:first-of-type': {
+            borderTopLeftRadius: '0px',
+            borderBottomLeftRadius: '0px',
+        },
+        '&:last-of-type': {
+            borderTopRightRadius: '0px',
+            borderBottomRightRadius: '0px',
+        },
     },
     borderBottom: 'none',
 }));

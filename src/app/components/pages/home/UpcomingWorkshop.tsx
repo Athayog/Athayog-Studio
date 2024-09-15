@@ -1,7 +1,28 @@
 import React, { useState } from 'react';
 import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
+import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
 import { TableRowBody, TableCell, Table } from '@/app/components/pages/home/styles/UpcomingWorkshop';
-import { Box, Button, TableRow, TableBody, TableContainer, TableHead, Paper, Typography } from '@mui/material';
+import { Box, Button, TableRow, TableBody, TableContainer, TableHead, Paper, Typography, styled } from '@mui/material';
+
+const Title = styled(Typography)(({ theme }) => ({
+    marginBottom: '20px',
+    textAlign: 'end',
+    [theme.breakpoints.down('md')]: {
+        fontSize: '32px',
+        textAlign: 'center',
+        width: '100%',
+    },
+}));
+
+const StyledButton = styled(RegisterButton)(({ theme }) => ({
+    marginTop: '30px',
+    [theme.breakpoints.down('md')]: {
+        marginTop: '20px',
+        fontSize: '18px',
+        height: '40px',
+        width: '173px',
+    },
+}));
 
 const data = {
     January: [
@@ -32,70 +53,74 @@ const YogaTable: React.FC = () => {
     };
 
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <Typography variant="h2" sx={{ marginBottom: '20px', textAlign: 'center' }}>
-                Upcoming Workshops
-            </Typography>
-            <TableContainer
-                component={Paper}
-                sx={{
-                    backgroundColor: 'transparent',
-                    boxShadow: 'none',
-                }}
-            >
-                <Table>
-                    <TableHead>
-                        <TableRow sx={{ color: '#4E4E4E' }}>
-                            <TableCell>Date</TableCell>
-                            <TableCell>Time</TableCell>
-                            <TableCell>Topic</TableCell>
-                            <TableCell>Teacher</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {data[selectedMonth as keyof typeof data]?.map((row, index) => (
-                            <TableRowBody
-                                key={index}
-                                sx={{
-                                    backgroundColor:
-                                        index % 2 === 0 ? 'rgba(132, 162, 118, 0.1)' : 'rgba(162, 205, 177, 0.25)',
-                                }}
-                            >
-                                <TableCell>{row.date}</TableCell>
-                                <TableCell>{row.time}</TableCell>
-                                <TableCell>{row.topic}</TableCell>
-                                <TableCell>{row.teacher}</TableCell>
-                            </TableRowBody>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-            <Box
-                sx={{
-                    marginTop: '20px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: '30px',
-                    backgroundColor: '#f0fee4',
-                    borderRadius: '44px',
-                    maxWidth: 'max-content',
-                    margin: '0 auto',
-                    padding: '10px',
-                    border: '1px solid rgba(0, 0, 0, 0.20)',
-                }}
-            >
-                {Object.keys(data).map((month) => (
-                    <Button
-                        key={month}
-                        variant={selectedMonth === month ? 'contained' : 'outlined'}
-                        onClick={() => handleMonthChange(month as MonthKey)}
+        <SectionPadding>
+            <SectionContent>
+                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <Title variant="h2">Upcoming Workshops</Title>
+                    <TableContainer
+                        component={Paper}
+                        sx={{
+                            backgroundColor: 'transparent',
+                            boxShadow: 'none',
+                        }}
                     >
-                        {month}
-                    </Button>
-                ))}
-            </Box>
-            <RegisterButton sx={{ marginTop: '30px' }}>Register Now</RegisterButton>
-        </Box>
+                        <Table>
+                            <TableHead>
+                                <TableRow sx={{ color: '#4E4E4E' }}>
+                                    <TableCell>Date</TableCell>
+                                    <TableCell>Time</TableCell>
+                                    <TableCell>Topic</TableCell>
+                                    <TableCell>Teacher</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {data[selectedMonth as keyof typeof data]?.map((row, index) => (
+                                    <TableRowBody
+                                        key={index}
+                                        sx={{
+                                            backgroundColor:
+                                                index % 2 === 0
+                                                    ? 'rgba(132, 162, 118, 0.1)'
+                                                    : 'rgba(162, 205, 177, 0.25)',
+                                        }}
+                                    >
+                                        <TableCell>{row.date}</TableCell>
+                                        <TableCell>{row.time}</TableCell>
+                                        <TableCell>{row.topic}</TableCell>
+                                        <TableCell>{row.teacher}</TableCell>
+                                    </TableRowBody>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                    <Box
+                        sx={{
+                            marginTop: '20px',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            gap: '30px',
+                            backgroundColor: '#f0fee4',
+                            borderRadius: '44px',
+                            maxWidth: 'max-content',
+                            margin: '0 auto',
+                            padding: '10px',
+                            border: '1px solid rgba(0, 0, 0, 0.20)',
+                        }}
+                    >
+                        {Object.keys(data).map((month) => (
+                            <Button
+                                key={month}
+                                variant={selectedMonth === month ? 'contained' : 'outlined'}
+                                onClick={() => handleMonthChange(month as MonthKey)}
+                            >
+                                {month}
+                            </Button>
+                        ))}
+                    </Box>
+                    <StyledButton>Register Now</StyledButton>
+                </Box>
+            </SectionContent>
+        </SectionPadding>
     );
 };
 
