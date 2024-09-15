@@ -89,7 +89,7 @@ const EmbraceWellness = () => {
                                     overflow: 'hidden',
                                 }}
                             >
-                                <Image src={CarouselSample} layout="fill" objectFit="cover" alt="Carousel Sample" />
+                                <Image src={CarouselSample} fill style={{ objectFit: 'cover' }} alt="Carousel Sample" />
                             </Box>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -103,7 +103,7 @@ const EmbraceWellness = () => {
                                     overflow: 'hidden',
                                 }}
                             >
-                                <Image src={CarouselSample} layout="fill" objectFit="cover" alt="Carousel Sample" />
+                                <Image src={CarouselSample} fill style={{ objectFit: 'cover' }} alt="Carousel Sample" />
                             </Box>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -117,7 +117,7 @@ const EmbraceWellness = () => {
                                     overflow: 'hidden',
                                 }}
                             >
-                                <Image src={CarouselSample} layout="fill" objectFit="cover" alt="Carousel Sample" />
+                                <Image src={CarouselSample} fill style={{ objectFit: 'cover' }} alt="Carousel Sample" />
                             </Box>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -131,7 +131,7 @@ const EmbraceWellness = () => {
                                     overflow: 'hidden',
                                 }}
                             >
-                                <Image src={CarouselSample} layout="fill" objectFit="cover" alt="Carousel Sample" />
+                                <Image src={CarouselSample} fill style={{ objectFit: 'cover' }} alt="Carousel Sample" />
                             </Box>
                         </SwiperSlide>
                     </Swiper>

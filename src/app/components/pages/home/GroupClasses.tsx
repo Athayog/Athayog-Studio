@@ -56,8 +56,14 @@ const Description = styled(Typography)(({ theme }) => ({
     },
 }));
 
-const StyledButton = styled(RegisterButton)(({}) => ({
+const StyledButton = styled(RegisterButton)(({ theme }) => ({
     marginTop: '30px',
+    [theme.breakpoints.down('md')]: {
+        margin: '0 auto',
+        fontSize: '18px',
+        height: '40px',
+        width: '173px',
+    },
 }));
 
 function GroupClasses() {
@@ -69,7 +75,7 @@ function GroupClasses() {
                         Athayog <span>Group Classes</span>
                     </Title>
                     <ImageContainer>
-                        <Image src={CarouselSample} layout="fill" objectFit="cover" alt="Carousel Sample" />
+                        <Image src={CarouselSample} fill style={{ objectFit: 'cover' }} alt="Carousel Sample" />
                     </ImageContainer>
                     <Description>
                         Join our group yoga sessions to improve your well-being. Connect with a supportive community and

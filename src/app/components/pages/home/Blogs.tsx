@@ -97,7 +97,7 @@ function Blogs() {
                                         overflow: 'hidden',
                                     }}
                                 >
-                                    <Image src={blog.image} layout="fill" objectFit="cover" alt={blog.title} />
+                                    <Image src={blog.image} fill style={{ objectFit: 'cover' }} alt={blog.title} />
                                 </Box>
 
                                 <Box

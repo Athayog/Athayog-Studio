@@ -79,12 +79,7 @@ const YogaEvent: React.FC = () => {
                                 border: ' 2.2px solid #94CE66',
                             }}
                         >
-                            <Image
-                                src={image}
-                                layout="fill"
-                                objectFit="cover"
-                                alt={`Album ${currentAlbum + 1} Image`}
-                            />
+                            <Image src={image} fill style={{objectFit:"cover"}} alt={`Album ${currentAlbum + 1} Image`} />
                         </Card>
                     </SwiperSlide>
                 ))}
@@ -130,12 +125,7 @@ const YogaEvent: React.FC = () => {
                                 borderRadius: ' 7.685px',
                             }}
                         >
-                            <Image
-                                src={album.images[0]}
-                                layout="fill"
-                                objectFit="cover"
-                                alt={`${album.name} Thumbnail`}
-                            />
+                            <Image src={album.images[0]} fill style={{objectFit:"cover"}} alt={`${album.name} Thumbnail`} />
                         </Box>
                         {/* Display album name */}
                         <Typography
