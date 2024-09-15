@@ -35,9 +35,9 @@ const HomePage: React.FC = () => {
                     <VideoTestimonials />
                     <GroupClasses />
                     <PersonalSessions />
-                    {/* <WeightLoss />
+                    <WeightLoss />
                     <YogaAcademy />
-                    <UpcomingWorkshop />
+                    {/* <UpcomingWorkshop />
                     <Blogs />
                     <YogaEvent />
                     <EmbraceWellness />
