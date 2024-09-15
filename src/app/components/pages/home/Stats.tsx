@@ -100,7 +100,7 @@ export default function Stats() {
                 <Grid
                     container
                     spacing={4}
-                    gap={{ xs: '20px', md: '80px', lg: '120px' }}
+                    gap={{ xs: '20px', md: '30px', lg: '80px' }}
                     justifyContent="center"
                     component="div"
                 >

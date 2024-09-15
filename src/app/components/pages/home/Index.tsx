@@ -30,8 +30,8 @@ const HomePage: React.FC = () => {
             <LayoutContainer>
                 <LayoutContent>
                     <Stats />
-                    {/* <Recognition />
-                    <WhyAthayog />
+                    <Recognition />
+                    {/* <WhyAthayog />
                     <VideoTestimonials />
                     <GroupClasses />
                     <PersonalSessions />
