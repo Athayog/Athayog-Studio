@@ -31,8 +31,8 @@ const HomePage: React.FC = () => {
                 <LayoutContent>
                     <Stats />
                     <Recognition />
-                    {/* <WhyAthayog />
-                    <VideoTestimonials />
+                    <WhyAthayog />
+                    {/* <VideoTestimonials />
                     <GroupClasses />
                     <PersonalSessions />
                     <WeightLoss />
