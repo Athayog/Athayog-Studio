@@ -24,7 +24,7 @@ const Container = styled(Box)(({ theme }) => ({
     },
 }));
 
-const TextBox = styled(Box)(({ theme }) => ({
+const TextBox = styled(Box)(({}) => ({
     maxWidth: '550px',
     position: 'relative',
 }));

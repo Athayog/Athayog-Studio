@@ -7,7 +7,7 @@ export const SectionPadding = styled(Box)(() => ({
         padding: '50px 80px',
     },
     [theme.breakpoints.down('md')]: {
-        padding: '40px 40px 10px 40px',
+        padding: '20px',
     },
 }));
 
