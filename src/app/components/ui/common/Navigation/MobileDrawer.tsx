@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import React, { useState } from 'react';
 import { Close } from '@mui/icons-material';
 import { usePathname } from 'next/navigation';
@@ -156,7 +155,7 @@ export default function MobileDrawer() {
 
     return (
         <DrawerParent>
-            <Image onClick={handleDrawerOpen} src={NavMenuMobile} alt={'Menu'} />
+            <NavMenuMobile onClick={handleDrawerOpen} src={NavMenuMobile} alt={'Menu'} />
             <Drawer variant="persistent" anchor="top" open={open}>
                 {DrawerList}
             </Drawer>

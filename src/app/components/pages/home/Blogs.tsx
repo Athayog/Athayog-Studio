@@ -2,7 +2,7 @@ import 'swiper/css';
 import React from 'react';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
-import PinkBg from '@/app/images/PinkBg.svg';
+import PinkBg from '@/app/images/PinkBg.jpeg';
 import { styled } from '@mui/material/styles';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image, { StaticImageData } from 'next/image';
@@ -28,6 +28,7 @@ const StyledBox = styled(Box)(({}) => ({
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
+        opacity: '0.4',
         filter: 'blur(30px)', // Adds the blur effect
         zIndex: -1, // Ensures the background is behind the content
     },

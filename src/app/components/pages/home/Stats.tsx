@@ -1,11 +1,9 @@
-import React from 'react';
-import Image from 'next/image';
 import Grid from '@mui/material/Grid2';
 import { styled } from '@mui/material/styles';
-import { Typography, Paper } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 import StatsAdiyogiSvg from '@/app/images/stats-adiyogi.svg';
-import StatsGraduateSvg from '@/app/images/stats-graduate.svg';
 import StatsCalendarSvg from '@/app/images/stats-calendar.svg';
+import StatsGraduateSvg from '@/app/images/stats-graduate.svg';
 import StateTransformationSvg from '@/app/images/stats-transformation.svg';
 import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
 
@@ -56,21 +54,19 @@ const StatBox = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(2),
     borderRadius: theme.shape.borderRadius,
     boxShadow: 'none',
-    height: '250px',
+
     width: '200px',
     [theme.breakpoints.down('md')]: {
         backgroundColor: '#eff3e4',
-        borderRadius: '7.978px',
-        height: '150px',
+        borderRadius: '7.978px ',
         width: '120px',
     },
-}));
-
-const StatIcon = styled(Image)(({ theme }) => ({
-    width: '45px',
-    height: 'auto',
-    [theme.breakpoints.down('md')]: {
-        width: '28px',
+    svg: {
+        width: '45px',
+        height: 'auto',
+        [theme.breakpoints.down('md')]: {
+            width: '35px',
+        },
     },
 }));
 
@@ -104,15 +100,18 @@ export default function Stats() {
                     justifyContent="center"
                     component="div"
                 >
-                    {statsData.map((stat) => (
-                        <Grid key={stat.id} component="div">
-                            <StatBox>
-                                <StatIcon src={stat.icon} alt={stat.name} />
-                                <StatCount>{stat.count}+</StatCount>
-                                <StatName>{stat.name}</StatName>
-                            </StatBox>
-                        </Grid>
-                    ))}
+                    {statsData.map((stat) => {
+                        const Icon = stat.icon;
+                        return (
+                            <Grid key={stat.id} component="div">
+                                <StatBox>
+                                    <Icon />
+                                    <StatCount>{stat.count}+</StatCount>
+                                    <StatName>{stat.name}</StatName>
+                                </StatBox>
+                            </Grid>
+                        );
+                    })}
                 </Grid>
             </SectionContent>
         </SectionPadding>

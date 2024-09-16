@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, styled, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { SwiperSlide } from 'swiper/react';
 import CarouselSample from '@/app/images/Sample (1).png';
@@ -7,7 +7,31 @@ import CarouselSample3 from '@/app/images/Sample (3).png';
 import CarouselSample4 from '@/app/images/Sample (4).png';
 import ResponsiveImage from '@/app/components/ui/common/ResposiveImage';
 import HorizontalSwiper from '@/app/components/ui/common/Swiper/HorizontalSwiper';
+import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
 import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
+
+const Title = styled(Typography)(({ theme }) => ({
+    fontSize: '48px',
+    color: '#202020',
+    fontWeight: 700,
+    marginBottom: '80px',
+    textAlign: 'center',
+    [theme.breakpoints.down('md')]: {
+        fontSize: '24px',
+        marginBottom: '24px',
+    },
+}));
+
+const StyledButton = styled(RegisterButton)(({ theme }) => ({
+    marginTop: '20px',
+    backgroundColor: '#007668',
+    [theme.breakpoints.down('md')]: {
+        margin: '0 auto',
+        fontSize: '18px',
+        height: '40px',
+        width: '173px',
+    },
+}));
 
 const albums = [
     {
@@ -34,6 +58,7 @@ const YogaEvent: React.FC = () => {
     return (
         <SectionPadding>
             <SectionContent>
+                <Title>Yoga Event Highlights</Title>
                 <HorizontalSwiper
                     slidesPerView={1}
                     enablePagination={false}
@@ -50,7 +75,7 @@ const YogaEvent: React.FC = () => {
                                     overflow: 'hidden',
                                     position: 'relative',
                                     height: {
-                                        xs: '300px',
+                                        xs: '200px',
                                         md: '400px',
                                         lg: '500px',
                                     },
@@ -110,6 +135,9 @@ const YogaEvent: React.FC = () => {
                             </Box>
                         );
                     })}
+                </Box>
+                <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: { xs: '20px', md: '50px' } }}>
+                    <StyledButton>Explore More</StyledButton>
                 </Box>
             </SectionContent>
         </SectionPadding>

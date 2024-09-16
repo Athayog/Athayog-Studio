@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import { Box, Typography, IconButton, Collapse, Card } from '@mui/material';
+import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Box, Collapse, IconButton, Typography } from '@mui/material';
+import React, { useState } from 'react';
 import RegisterButton from '../../ui/common/elements/button/RegisterButton';
+import theme from '../../ui/theme';
 
 // Sample FAQ data
 const FAQS = [
@@ -63,68 +65,148 @@ const FAQ: React.FC = () => {
     };
 
     return (
-        <Box sx={{ maxWidth: '942px', margin: '100px auto 0 auto' }}>
-            <Typography variant="h2" sx={{ textAlign: 'center', marginBottom: '70px' }}>
-                FAQ
-            </Typography>
-            {FAQS.map((faq, index) => (
+        <SectionPadding>
+            <SectionContent>
                 <Box
-                    key={index}
                     sx={{
-                        marginBottom: '20px',
-                        borderRadius: expanded === index ? '30px' : '186.388px',
-                        background: 'linear-gradient(90deg, #E4F6CF 0%, #CCE4AF 84%)',
-                        padding: '25px 34px',
-                        transition: 'min-height 0.3s',
-                        minHeight: expanded === index ? '200px' : '100px', // Ensure a consistent height when collapsed/expanded
-                        position: 'relative',
-                        width: '942px', // Fixed width to prevent layout shift
+                        maxWidth: '942px',
+                        margin: '100px auto 0 auto',
+                        [theme.breakpoints.down('md')]: {
+                            margin: '10px auto 0 auto',
+                        },
                     }}
                 >
+                    <Typography
+                        variant="h2"
+                        sx={{
+                            textAlign: 'center',
+                            marginBottom: '70px',
+                            [theme.breakpoints.down('md')]: {
+                                fontSize: '25px',
+                                marginBottom: '10px',
+                            },
+                        }}
+                    >
+                        FAQ
+                    </Typography>
+                    {FAQS.map((faq, index) => (
+                        <Box
+                            key={index}
+                            sx={{
+                                marginBottom: '20px',
+                                borderRadius: expanded === index ? '30px' : '186.388px',
+                                background: 'linear-gradient(90deg, #E4F6CF 0%, #CCE4AF 84%)',
+                                padding: '25px 34px',
+                                transition: 'min-height 0.3s',
+                                minHeight: expanded === index ? '200px' : '100px', // Ensure a consistent height when collapsed/expanded
+                                position: 'relative',
+                                width: '942px', // Fixed width to prevent layout shift
+                                [theme.breakpoints.down('md')]: {
+                                    width: '100%', // Fixed width to prevent layout shift
+                                    padding: '10px 30px',
+                                    minHeight: expanded === index ? '100px' : '50px', // Ensure a consistent height when collapsed/expanded
+                                },
+                            }}
+                        >
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    cursor: 'pointer',
+                                }}
+                                onClick={() => handleExpandClick(index)}
+                            >
+                                <Typography
+                                    variant="body1"
+                                    sx={{
+                                        color: '#202020',
+                                        [theme.breakpoints.down('md')]: {
+                                            fontSize: '15px',
+                                        },
+                                    }}
+                                >
+                                    {faq.question}
+                                </Typography>
+                                <IconButton
+                                    sx={{
+                                        width: '58px',
+                                        height: '58px',
+                                        backgroundColor: '#fff',
+                                        boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+                                        borderRadius: '50%',
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        transition: 'transform 0.3s',
+                                        transform: expanded === index ? 'rotate(0deg)' : 'rotate(-90deg)',
+                                        [theme.breakpoints.down('md')]: {
+                                            width: '34px',
+                                            height: '34px',
+                                        },
+                                    }}
+                                >
+                                    <ExpandMoreIcon />
+                                </IconButton>
+                            </Box>
+                            <Collapse in={expanded === index} timeout="auto" unmountOnExit>
+                                <Typography
+                                    sx={{
+                                        marginTop: '20px',
+                                        color: '#202020',
+                                        [theme.breakpoints.down('md')]: {
+                                            fontSize: '15px',
+                                        },
+                                    }}
+                                >
+                                    {faq.answer}
+                                </Typography>
+                            </Collapse>
+                        </Box>
+                    ))}
+
                     <Box
                         sx={{
                             display: 'flex',
-                            justifyContent: 'space-between',
+                            flexDirection: 'column',
                             alignItems: 'center',
-                            cursor: 'pointer',
+                            marginTop: '100px',
+                            [theme.breakpoints.down('md')]: {
+                                marginTop: '10px',
+                            },
                         }}
-                        onClick={() => handleExpandClick(index)}
                     >
-                        <Typography variant="body1" sx={{ color: '#202020' }}>
-                            {faq.question}
-                        </Typography>
-                        <IconButton
+                        <Typography
                             sx={{
-                                width: '58px',
-                                height: '58px',
-                                backgroundColor: '#fff',
-                                boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
-                                borderRadius: '50%',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                transition: 'transform 0.3s',
-                                transform: expanded === index ? 'rotate(0deg)' : 'rotate(-90deg)',
+                                textAlign: 'center',
+                                color: '#0A142F',
+                                fontSize: '30px',
+                                fontWeight: '600',
+                                [theme.breakpoints.down('md')]: {
+                                    fontSize: '18px',
+                                },
                             }}
                         >
-                            <ExpandMoreIcon />
-                        </IconButton>
+                            Stay Inspired: Yoga Tips, Wellness Insights and Special Offers Delivered to Your Inbox.
+                        </Typography>
+                        <RegisterButton
+                            sx={{
+                                marginTop: '30px',
+                                width: 'max-content',
+                                [theme.breakpoints.down('md')]: {
+                                    margin: '0 auto',
+                                    fontSize: '18px',
+                                    height: '40px',
+                                    width: '300px',
+                                },
+                            }}
+                        >
+                            Begin Your Mindful Journey
+                        </RegisterButton>
                     </Box>
-                    <Collapse in={expanded === index} timeout="auto" unmountOnExit>
-                        <Typography sx={{ marginTop: '20px', color: '#202020' }}>{faq.answer}</Typography>
-                    </Collapse>
                 </Box>
-            ))}
-
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '100px' }}>
-                <Typography sx={{ textAlign: 'center', color: '#0A142F', fontSize: '30px', fontWeight: '600' }}>
-                    Stay Inspired: Yoga Tips, Wellness Insights and Special Offers Delivered to Your Inbox.
-                </Typography>
-                <RegisterButton sx={{ marginTop: '30px', width: 'max-content' }}>
-                    Begin Your Mindful Journey
-                </RegisterButton>
-            </Box>
-        </Box>
+            </SectionContent>
+        </SectionPadding>
     );
 };
 

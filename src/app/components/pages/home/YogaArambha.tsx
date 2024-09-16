@@ -1,115 +1,115 @@
+import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
+import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
 import { Box, Typography } from '@mui/material';
 import { YouTubeEmbed } from '@next/third-parties/google';
-import { useRef } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
-import RegisterButton from '../../ui/common/elements/button/RegisterButton';
-import { AthayogSwiper } from './styles/WhyAthayog';
+import theme from '../../ui/theme';
 
 const YogaArambha = () => {
-    const swiperRef = useRef<SwiperRef>(null);
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                width: '100%',
-            }}
-        >
-            <Box sx={{ maxWidth: '550px', position: 'relative' }}>
-                <Typography sx={{ fontSize: '48px', color: '#202020', fontWeight: '700' }}>Yoga Arambha</Typography>
-                <Typography
-                    sx={{ fontSize: '32px', color: '#46892D', fontWeight: '700', marginTop: '22px' }}
-                ></Typography>
-                <Typography sx={{ fontSize: '24px', color: '#000', marginTop: '34px' }}>
-                    AthaYog Living and Indiranagar Club present "Yoga Arambha" on International Day of Yoga, celebrating
-                    women's strength and resilience. Featuring a special Yoga session and talent showcase, this event
-                    marks the start of a wellness journey. <br /> Chief Guest BNS Reddy IPS (Retd.), President of
-                    Indiranagar Club, will honor us with his presence.
-                </Typography>
-                <Box sx={{ display: 'flex', gap: '20px', marginTop: '27px' }}>
-                    <RegisterButton sx={{ width: 'max-content' }}>Dive Into Yoga Arambaha</RegisterButton>
-                </Box>
-            </Box>
-            <AthayogSwiper>
-                <Swiper
-                    direction={'vertical'}
-                    pagination={{
-                        clickable: true,
+        <SectionPadding>
+            <SectionContent>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        width: '100%',
+                        [theme.breakpoints.down('md')]: {
+                            flexDirection: 'column',
+                        },
                     }}
-                    modules={[Pagination, Navigation]}
-                    navigation={{
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    }}
-                    loop={true}
-                    ref={swiperRef}
-                    className="swiper-why"
-                    style={{ height: '510px', marginLeft: '0', marginRight: '0px', paddingRight: '70px' }}
                 >
-                    <SwiperSlide>
-                        <Box
+                    <Box sx={{ maxWidth: '550px', position: 'relative' }}>
+                        <Typography
                             sx={{
-                                position: 'relative',
-                                borderRadius: '270px',
-                                height: '500px',
-                                width: '436px',
-                                border: '4px solid #F8BCC0',
-                                overflow: 'hidden',
+                                fontSize: '48px',
+                                color: '#202020',
+                                fontWeight: '700',
+                                [theme.breakpoints.down('md')]: {
+                                    fontSize: '28px',
+                                    marginTop: '0px',
+                                    textAlign: 'center',
+                                },
                             }}
                         >
-                            <YouTubeEmbed style="height: 520px;" videoid="cwvhEaSwwCw" params="controls=0" />
-                        </Box>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Box
+                            Yoga Arambha
+                        </Typography>
+
+                        <Typography
                             sx={{
-                                position: 'relative',
-                                borderRadius: '270px',
-                                height: '500px',
-                                width: '436px',
-                                border: '4px solid #F8BCC0',
-                                overflow: 'hidden',
+                                fontSize: '24px',
+                                color: '#000',
+                                marginTop: '34px',
+                                [theme.breakpoints.down('md')]: {
+                                    fontSize: '18px',
+                                    marginTop: '20px',
+                                },
                             }}
                         >
-                            <YouTubeEmbed style="height: 520px;" videoid="cwvhEaSwwCw" params="controls=0" />
-                        </Box>
-                    </SwiperSlide>
-                    <SwiperSlide>
+                            AthaYog Living and Indiranagar Club present &quot;Yoga Arambha&quot; on International Day of
+                            Yoga, celebrating women&apos;s strength and resilience. Featuring a special Yoga session and
+                            talent showcase, this event marks the start of a wellness journey. <br /> Chief Guest BNS
+                            Reddy IPS (Retd.), President of Indiranagar Club, will honor us with his presence.
+                        </Typography>
                         <Box
                             sx={{
-                                position: 'relative',
-                                borderRadius: '270px',
-                                height: '500px',
-                                width: '436px',
-                                border: '4px solid #F8BCC0',
-                                overflow: 'hidden',
+                                display: 'flex',
+                                gap: '20px',
+                                marginTop: '27px',
+                                [theme.breakpoints.down('md')]: {
+                                    display: 'none',
+                                },
                             }}
                         >
-                            <YouTubeEmbed style="height: 520px;" videoid="cwvhEaSwwCw" params="controls=0" />
+                            <RegisterButton sx={{ width: 'max-content' }}>Dive Into Yoga Arambaha</RegisterButton>
                         </Box>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <Box
-                            sx={{
-                                position: 'relative',
-                                borderRadius: '270px',
-                                height: '500px',
-                                width: '436px',
-                                border: '4px solid #F8BCC0',
-                                overflow: 'hidden',
-                            }}
-                        >
-                            <YouTubeEmbed style="height: 520px;" videoid="cwvhEaSwwCw" params="controls=0" />
-                        </Box>
-                    </SwiperSlide>
-                </Swiper>
-            </AthayogSwiper>
-        </Box>
+                    </Box>
+                    <Box
+                        sx={{
+                            position: 'relative',
+                            borderRadius: '270px',
+                            height: '500px',
+                            width: '436px',
+                            border: '4px solid #F8BCC0',
+                            overflow: 'hidden',
+                            [theme.breakpoints.down('md')]: {
+                                marginTop: '20px',
+                                width: '100%',
+                            },
+                        }}
+                    >
+                        <YouTubeEmbed style="height: 520px;" videoid="cwvhEaSwwCw" params="controls=0" />
+                    </Box>
+                </Box>
+                <Box
+                    sx={{
+                        display: 'none',
+                        justifyContent: 'center',
+                        marginTop: '27px',
+                        [theme.breakpoints.down('md')]: {
+                            display: 'flex',
+                        },
+                    }}
+                >
+                    <RegisterButton
+                        sx={{
+                            width: 'max-content',
+                            [theme.breakpoints.down('md')]: {
+                                margin: '0 auto',
+                                fontSize: '18px',
+                                height: '40px',
+                                width: '300px',
+                            },
+                        }}
+                    >
+                        Dive Into Yoga Arambaha
+                    </RegisterButton>
+                </Box>
+            </SectionContent>
+        </SectionPadding>
     );
 };
 
