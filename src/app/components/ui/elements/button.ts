@@ -6,6 +6,7 @@ export const button = {
             root: () => ({
                 textTransform: 'none',
                 borderRadius: '1.25rem',
+                boxShadow: 'none',
                 variants: [], // Add this property
             }),
             contained: ({ theme }: { theme: Theme }) => ({

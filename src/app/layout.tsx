@@ -1,11 +1,11 @@
-import theme from '@/components/ui/theme';
-import '@/globals.css';
-import { ThemeProvider } from '@mui/material';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-import CssBaseline from '@mui/material/CssBaseline';
+import '@/app/globals.css';
 import type { Metadata } from 'next';
+import theme from '@/app/components/ui/theme';
+import { ThemeProvider } from '@mui/material';
 import { Josefin_Sans } from 'next/font/google';
-import Navbar from './components/ui/common/Navigation/Index';
+import CssBaseline from '@mui/material/CssBaseline';
+import Navbar from '@/app/components/ui/common/Navigation/Index';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 
 const josefin = Josefin_Sans({ subsets: ['latin'] });
 
@@ -23,6 +23,7 @@ export default function RootLayout({
         <html lang="en">
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+                <link rel="icon" href="./favicon.ico" />
             </head>
             <body className={`${josefin.className}`}>
                 <AppRouterCacheProvider>

@@ -1,13 +1,24 @@
 'use client';
-import { pallete } from '@/components/ui/pallete';
 import { createTheme } from '@mui/material/styles';
-import { button } from '@/components/ui/elements/button';
-import { appBar } from '@/components/ui/elements/appBar';
-import { divider } from '@/components/ui/elements/divider';
+import { pallete } from '@/app/components/ui/pallete';
+import { button } from '@/app/components/ui/elements/button';
+import { divider } from '@/app/components/ui/elements/divider';
+import { menu } from '@/app/components/ui/elements/menu';
 
 const theme = createTheme({
     typography: {
         fontFamily: 'inherit',
+        h2: {
+            fontSize: '48px',
+            fontWeight: '700',
+        },
+        h3: {
+            fontSize: '32px',
+            fontWeight: '700',
+        },
+        body1: {
+            fontSize: '24px',
+        },
     },
     palette: pallete,
 
@@ -22,8 +33,8 @@ const theme = createTheme({
     },
     components: {
         ...button,
-        ...appBar,
         ...divider,
+        ...menu,
     },
 });
 

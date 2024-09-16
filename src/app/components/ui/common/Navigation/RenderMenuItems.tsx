@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import theme from '@/components/ui/theme';
+import theme from '@/app/components/ui/theme';
 import { MenuItem } from '@mui/material';
 import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
-import { Menu } from '@/components/ui/common/Navigation/styles/RenderMenuItems';
+import { Menu } from '@/app/components/ui/common/Navigation/styles/RenderMenuItems';
 
 interface MenuItemProps {
     label: string;
