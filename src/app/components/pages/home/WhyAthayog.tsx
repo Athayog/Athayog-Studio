@@ -2,9 +2,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Pagination, Navigation } from 'swiper/modules';
-import { Box, IconButton, Typography, styled } from '@mui/material';
+import { Box, IconButton, Skeleton, Typography, styled } from '@mui/material';
 import CarouselSample from '@/app/images/CarouselSample.png';
 import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
@@ -54,7 +54,7 @@ const Description = styled(Typography)(({ theme }) => ({
     color: '#000',
     marginTop: '34px',
     [theme.breakpoints.down('md')]: {
-        fontSize: '15px',
+        fontSize: '18px',
         marginTop: '24px',
     },
 }));
@@ -100,9 +100,14 @@ const SwiperImageBox = styled(Box)(({ theme }) => ({
 const AthayogSwiper = styled(Box)(({ theme }) => ({
     '.swiper-why': {
         height: '510px',
+        width: '100%',
         marginLeft: '0',
         marginRight: '0px',
         paddingRight: '70px',
+        '.swiper-vertical': {
+            width: '100%',
+            flexDirection: 'column',
+        },
         [theme.breakpoints.down('md')]: {
             height: '366px',
             paddingRight: '0px',
@@ -135,8 +140,21 @@ const AthayogSwiper = styled(Box)(({ theme }) => ({
     },
 }));
 
+const SwiperSkeleton = () => (
+    <Box sx={{ borderRadius: '270px', height: '500px', width: '436px' }}>
+        <Skeleton variant="rectangular" width="100%" height="100%" sx={{ borderRadius: '270px', width: '436px' }} />
+    </Box>
+);
+
 const WhyAthayog = () => {
     const swiperRef = useRef<SwiperRef>(null);
+
+    const [isLoading, setIsLoading] = useState(true);
+
+    const handleSwiperInit = (swiper: { update: () => void }) => {
+        swiper.update();
+        setIsLoading(false); // Hide skeleton loader once Swiper is initialized
+    };
 
     return (
         <SectionPadding>
@@ -158,6 +176,7 @@ const WhyAthayog = () => {
                             </StyledIconButton>
                         </ButtonGroup>
                     </TextBox>
+                    {isLoading && <SwiperSkeleton />}
                     <AthayogSwiper>
                         <Swiper
                             direction={'vertical'}
@@ -167,10 +186,11 @@ const WhyAthayog = () => {
                                 nextEl: '.swiper-button-next',
                                 prevEl: '.swiper-button-prev',
                             }}
-                            loop={true}
                             autoplay={true}
+                            onInit={handleSwiperInit}
                             ref={swiperRef}
                             className="swiper-why"
+                            style={isLoading ? { display: 'none' } : { display: 'flex' }}
                         >
                             {Array(4)
                                 .fill(null)

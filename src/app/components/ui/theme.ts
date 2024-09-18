@@ -21,7 +21,6 @@ const theme = createTheme({
         },
     },
     palette: pallete,
-
     breakpoints: {
         values: {
             xs: 0,

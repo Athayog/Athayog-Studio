@@ -1,8 +1,10 @@
 import { Box, styled } from '@mui/material';
 
-export const LayoutContainer = styled(Box)(() => ({
-    // padding: '70px 100px',
+export const LayoutContainer = styled(Box)(({ theme }) => ({
     backgroundColor: '#e9fdde',
+    [theme.breakpoints.down('lg')]: {
+        padding: '50px 0px',
+    },
 }));
 
 export const LayoutContent = styled(Box)(({ theme }) => ({

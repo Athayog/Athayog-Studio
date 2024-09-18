@@ -155,7 +155,7 @@ export default function MobileDrawer() {
 
     return (
         <DrawerParent>
-            <NavMenuMobile onClick={handleDrawerOpen} src={NavMenuMobile} alt={'Menu'} />
+            <NavMenuMobile onClick={handleDrawerOpen} alt={'Menu'} />
             <Drawer variant="persistent" anchor="top" open={open}>
                 {DrawerList}
             </Drawer>

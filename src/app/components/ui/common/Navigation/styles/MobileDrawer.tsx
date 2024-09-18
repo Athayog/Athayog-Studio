@@ -80,6 +80,12 @@ export const DrawerNavContainer = styled(Box)({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'baseline',
+    fontSize: '18px',
+    '& .MuiListItem-root': {
+        span: {
+            fontSize: '18px',
+        },
+    },
 });
 
 export const Drawer = styled(MuiDrawer)({

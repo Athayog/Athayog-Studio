@@ -100,7 +100,7 @@ const YogaArambha = () => {
                             [theme.breakpoints.down('md')]: {
                                 margin: '0 auto',
                                 fontSize: '18px',
-                                height: '40px',
+                                height: '50px',
                                 width: '300px',
                             },
                         }}

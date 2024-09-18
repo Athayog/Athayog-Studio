@@ -38,7 +38,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
     position: 'relative',
     padding: '16px',
     width: '360px',
-    height: '400px',
+    height: '100%',
     background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.50) 0%, rgba(232, 255, 221, 0.50) 100%)',
     boxShadow: 'none',
     color: 'black',
@@ -64,7 +64,7 @@ const CardContent = styled(Box)(({}) => ({
 }));
 
 const SwiperStyled = styled(Swiper)(({ theme }) => ({
-    height: '600px',
+    height: 'auto',
     marginTop: '42px',
     '.swiper-slide': {
         display: 'flex',

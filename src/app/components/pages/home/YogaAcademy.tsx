@@ -1,10 +1,10 @@
 import 'swiper/css';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Box, Typography, styled } from '@mui/material';
+import { Box, Skeleton, Typography, styled } from '@mui/material';
 import { Navigation, Pagination } from 'swiper/modules';
 import CarouselSample from '@/app/images/CarouselSample.png';
 import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
@@ -124,16 +124,30 @@ const StyledButton = styled(RegisterButton)(({ theme }) => ({
     [theme.breakpoints.down('md')]: {
         margin: '0 auto',
         fontSize: '18px',
-        height: '40px',
+        height: '50px',
         width: '173px',
     },
 }));
 
+const SwiperSkeleton = () => (
+    <Box sx={{ borderRadius: '270px', height: '500px', width: '436px' }}>
+        <Skeleton variant="rectangular" width="100%" height="100%" sx={{ borderRadius: '270px', width: '436px' }} />
+    </Box>
+);
+
 const YogaAcademy: React.FC = () => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    const handleSwiperInit = (swiper: { update: () => void }) => {
+        swiper.update();
+        setIsLoading(false); // Hide skeleton loader once Swiper is initialized
+    };
+
     return (
         <SectionPadding>
             <SectionContent>
                 <Container>
+                    {isLoading && <SwiperSkeleton />}
                     <AthayogSwiper>
                         <Swiper
                             direction="vertical"
@@ -144,8 +158,9 @@ const YogaAcademy: React.FC = () => {
                                 nextEl: '.swiper-button-next',
                                 prevEl: '.swiper-button-prev',
                             }}
-                            loop
+                            onInit={handleSwiperInit}
                             className="swiper-yoga"
+                            style={isLoading ? { display: 'none' } : { display: 'flex' }}
                         >
                             {[...Array(4)].map((_, index) => (
                                 <SwiperSlide key={index}>

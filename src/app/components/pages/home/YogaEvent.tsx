@@ -28,7 +28,7 @@ const StyledButton = styled(RegisterButton)(({ theme }) => ({
     [theme.breakpoints.down('md')]: {
         margin: '0 auto',
         fontSize: '18px',
-        height: '40px',
+        height: '50px',
         width: '173px',
     },
 }));

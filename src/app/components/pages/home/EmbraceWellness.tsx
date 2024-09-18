@@ -1,16 +1,17 @@
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Image from 'next/image';
-import { useRef } from 'react';
 import 'swiper/css/navigation';
+import { useRef, useState } from 'react';
+import theme from '@/app/components/ui/theme';
 import { Pagination, Navigation } from 'swiper/modules';
-import { Box, IconButton, styled, Typography } from '@mui/material';
 import CarouselSample from '@/app/images/CarouselSample.png';
 import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
-import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
-import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
-import theme from '../../ui/theme';
+import { Box, IconButton, styled, Typography, Skeleton } from '@mui/material';
+import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
+import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
+
 const AthayogSwiper = styled(Box)(() => ({
     '.swiper-yoga': {
         [theme.breakpoints.down('sm')]: {
@@ -48,13 +49,25 @@ const StyledButton = styled(RegisterButton)(({ theme }) => ({
     [theme.breakpoints.down('md')]: {
         margin: '20px auto 0 auto',
         fontSize: '18px',
-        height: '40px',
+        height: '50px',
         width: '200px',
     },
 }));
 
+const SwiperSkeleton = () => (
+    <Box sx={{ borderRadius: '270px', height: '500px', width: '436px' }}>
+        <Skeleton variant="rectangular" width="100%" height="100%" sx={{ borderRadius: '270px', width: '436px' }} />
+    </Box>
+);
+
 const EmbraceWellness = () => {
     const swiperRef = useRef<SwiperRef>(null);
+    const [isLoading, setIsLoading] = useState(true);
+
+    const handleSwiperInit = (swiper: { update: () => void }) => {
+        swiper.update();
+        setIsLoading(false); // Hide skeleton loader once Swiper is initialized
+    };
     return (
         <SectionPadding>
             <SectionContent>
@@ -152,10 +165,14 @@ const EmbraceWellness = () => {
                                     nextEl: '.swiper-button-next',
                                     prevEl: '.swiper-button-prev',
                                 }}
-                                loop={true}
+                                onInit={handleSwiperInit}
                                 ref={swiperRef}
                                 className="swiper-yoga"
-                                style={{ height: '510px', marginLeft: '0', marginRight: '0px', paddingRight: '70px' }}
+                                style={
+                                    isLoading
+                                        ? { display: 'none' }
+                                        : { height: '510px', marginLeft: '0', marginRight: '0px', paddingRight: '70px' }
+                                }
                             >
                                 <SwiperSlide>
                                     <Box
@@ -170,8 +187,8 @@ const EmbraceWellness = () => {
                                     >
                                         <Image
                                             src={CarouselSample}
-                                            layout="fill"
-                                            objectFit="cover"
+                                            fill
+                                            style={{ objectFit: 'cover' }}
                                             alt="Carousel Sample"
                                         />
                                     </Box>
@@ -189,8 +206,8 @@ const EmbraceWellness = () => {
                                     >
                                         <Image
                                             src={CarouselSample}
-                                            layout="fill"
-                                            objectFit="cover"
+                                            fill
+                                            style={{ objectFit: 'cover' }}
                                             alt="Carousel Sample"
                                         />
                                     </Box>
@@ -208,8 +225,8 @@ const EmbraceWellness = () => {
                                     >
                                         <Image
                                             src={CarouselSample}
-                                            layout="fill"
-                                            objectFit="cover"
+                                            fill
+                                            style={{ objectFit: 'cover' }}
                                             alt="Carousel Sample"
                                         />
                                     </Box>
@@ -227,8 +244,8 @@ const EmbraceWellness = () => {
                                     >
                                         <Image
                                             src={CarouselSample}
-                                            layout="fill"
-                                            objectFit="cover"
+                                            fill
+                                            style={{ objectFit: 'cover' }}
                                             alt="Carousel Sample"
                                         />
                                     </Box>
