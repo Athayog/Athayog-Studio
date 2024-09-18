@@ -2,6 +2,7 @@ import '@/app/globals.css';
 import type { Metadata } from 'next';
 import theme from '@/app/components/ui/theme';
 import { ThemeProvider } from '@mui/material';
+import NextTopLoader from 'nextjs-toploader';
 import { Josefin_Sans } from 'next/font/google';
 import CssBaseline from '@mui/material/CssBaseline';
 import Navbar from '@/app/components/ui/common/Navigation/Index';
@@ -29,6 +30,7 @@ export default function RootLayout({
                 <AppRouterCacheProvider>
                     <ThemeProvider theme={theme}>
                         <CssBaseline />
+                        <NextTopLoader />
                         <Navbar />
                         {children}
                     </ThemeProvider>
