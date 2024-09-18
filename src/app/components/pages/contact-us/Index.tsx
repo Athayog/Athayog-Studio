@@ -19,12 +19,12 @@ const validationSchema = Yup.object({
 });
 
 // Styled components
-const ContactContainer = styled(Box)(({ theme }) => ({
+const ContactContainer = styled(Box)(({}) => ({
     backgroundColor: '#E7FDDA',
     minHeight: '100vh',
 }));
 
-const ContactContent = styled(Box)(({ theme }) => ({
+const ContactContent = styled(Box)(({}) => ({
     display: 'flex',
     justifyContent: 'space-between',
     padding: '80px 120px',

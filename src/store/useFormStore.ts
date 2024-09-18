@@ -1,8 +1,6 @@
-// store/useFormStore.ts
 import { create } from 'zustand';
-import { addDoc, collection } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
-
+import { addDoc, collection } from 'firebase/firestore';
 interface FormState {
     loading: boolean;
     error: string | null;
@@ -24,10 +22,8 @@ const useFormStore = create<FormState>((set) => ({
     submitForm: async (formData, collectionName, apiUrl) => {
         set({ loading: true, error: null, success: false });
         try {
-            // Save form data to Firebase
             await addDoc(collection(db, collectionName), formData);
 
-            // If API URL is provided, submit form data to third-party API
             if (apiUrl) {
                 const response = await fetch(apiUrl, {
                     method: 'POST',
@@ -36,7 +32,6 @@ const useFormStore = create<FormState>((set) => ({
                 });
 
                 if (!response.ok) {
-                    // Log third-party API error to Firebase
                     await addDoc(collection(db, 'formErrors'), {
                         formData,
                         error: 'Failed to submit form to API',
@@ -46,8 +41,6 @@ const useFormStore = create<FormState>((set) => ({
             }
             set({ success: true });
         } catch (error) {
-            // Log Firebase errors and set local state
-            console.error('Error submitting form:', error);
             set({ error: 'Failed to submit form. Please try again later.' });
         } finally {
             set({ loading: false });
