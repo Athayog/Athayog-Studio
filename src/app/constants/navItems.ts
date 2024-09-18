@@ -37,5 +37,5 @@ export const navItems: NavItem[] = [
         ],
     },
     { label: 'Others', path: '/others', type: 'nav' },
-    { label: 'Contact Us', path: '/contact', type: 'nav' },
+    { label: 'Contact Us', path: '/contact-us', type: 'nav' },
 ];
