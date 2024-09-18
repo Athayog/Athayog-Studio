@@ -55,10 +55,10 @@ const Navbar: React.FC = () => {
         <AppBar
             position="fixed"
             sx={{
-                transition: 'background-color 0.8s ease-in-out', // Add transition for smooth animation
                 backgroundColor: isScrolled ? '#556940' : 'transparent', // Dynamically change based on scroll
                 boxShadow: 'none',
-                padding: '14px 20px',
+                padding: isScrolled ? '10px 20px' : '25px 20px',
+                transition: 'padding 0.5s ease-in-out, background-color 0.5s ease-in-out',
             }}
         >
             <ScrollListener />

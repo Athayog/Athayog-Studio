@@ -31,6 +31,7 @@ export default function RootLayout({
                     <ThemeProvider theme={theme}>
                         <CssBaseline />
                         <NextTopLoader />
+                        <div id="scroll-target" />
                         <Navbar />
                         {children}
                     </ThemeProvider>

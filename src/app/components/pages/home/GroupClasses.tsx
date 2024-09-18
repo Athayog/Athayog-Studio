@@ -48,7 +48,7 @@ const Description = styled(Typography)(({ theme }) => ({
     maxWidth: '800px',
     margin: '30px auto 0 auto',
     [theme.breakpoints.down('md')]: {
-        fontSize: '13px',
+        fontSize: '18px',
         margin: '16px auto 0 auto',
     },
     strong: {
@@ -56,12 +56,12 @@ const Description = styled(Typography)(({ theme }) => ({
     },
 }));
 
-const StyledButton = styled(RegisterButton)(({ theme }) => ({
+const RegisterActionButton = styled(RegisterButton)(({ theme }) => ({
     marginTop: '30px',
     [theme.breakpoints.down('md')]: {
-        margin: '0 auto',
+        margin: '13px  auto 0 auto',
         fontSize: '18px',
-        height: '40px',
+        height: '50px',
         width: '173px',
     },
 }));
@@ -82,7 +82,7 @@ function GroupClasses() {
                         find <strong>balance in mind body,</strong> and <strong>soul</strong>. Start your journey to a
                         healthier life with us today.
                     </Description>
-                    <StyledButton variant="contained">Register Now</StyledButton>
+                    <RegisterActionButton variant="contained">Register Now</RegisterActionButton>
                 </Container>
             </SectionContent>
         </SectionPadding>

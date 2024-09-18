@@ -172,7 +172,7 @@ const FAQ: React.FC = () => {
                             alignItems: 'center',
                             marginTop: '100px',
                             [theme.breakpoints.down('md')]: {
-                                marginTop: '10px',
+                                marginTop: '13px',
                             },
                         }}
                     >
@@ -194,9 +194,9 @@ const FAQ: React.FC = () => {
                                 marginTop: '30px',
                                 width: 'max-content',
                                 [theme.breakpoints.down('md')]: {
-                                    margin: '0 auto',
+                                    margin: '17px auto 0 auto',
                                     fontSize: '18px',
-                                    height: '40px',
+                                    height: '50px',
                                     width: '300px',
                                 },
                             }}

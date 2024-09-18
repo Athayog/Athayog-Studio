@@ -70,7 +70,7 @@ const TitleMobile = styled(Typography)(({ theme }) => ({
 const Description = styled(Typography)(({ theme }) => ({
     textAlign: 'end',
     [theme.breakpoints.down('md')]: {
-        fontSize: '13px',
+        fontSize: '18px',
         textAlign: 'left',
     },
 }));
@@ -81,7 +81,7 @@ const StyledButton = styled(RegisterButton)(({ theme }) => ({
     [theme.breakpoints.down('md')]: {
         margin: '0 auto',
         fontSize: '18px',
-        height: '40px',
+        height: '50px',
         width: '173px',
     },
 }));
