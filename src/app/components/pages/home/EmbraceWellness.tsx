@@ -54,12 +54,6 @@ const StyledButton = styled(RegisterButton)(({ theme }) => ({
     },
 }));
 
-const SwiperSkeleton = () => (
-    <Box sx={{ borderRadius: '270px', height: '500px', width: '436px' }}>
-        <Skeleton variant="rectangular" width="100%" height="100%" sx={{ borderRadius: '270px', width: '436px' }} />
-    </Box>
-);
-
 const EmbraceWellness = () => {
     const swiperRef = useRef<SwiperRef>(null);
     const [isLoading, setIsLoading] = useState(true);
