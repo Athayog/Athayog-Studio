@@ -8,7 +8,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 import CarouselSample from '@/app/images/CarouselSample.png';
 import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
-import { Box, IconButton, styled, Typography, Skeleton } from '@mui/material';
+import { Box, IconButton, styled, Typography } from '@mui/material';
 import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
 import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
 
