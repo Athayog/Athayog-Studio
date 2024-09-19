@@ -34,6 +34,7 @@ export const navItems: NavItem[] = [
                     { label: 'TTC Online', path: '/ttc-online', type: 'nav' },
                 ],
             },
+            { label: 'PCOS Yoga', path: '/pcos-yoga', type: 'nav' },
         ],
     },
     { label: 'Others', path: '/others', type: 'nav' },

@@ -202,7 +202,7 @@ function Blogs() {
                                             <Typography sx={{ fontSize: '24px', fontWeight: '700', marginTop: '12px' }}>
                                                 {blog.title}
                                             </Typography>
-                                            <Typography variant="body2">{blog.content}</Typography>
+                                            <Typography variant="body1">{blog.content}</Typography>
                                             <Button sx={{ width: '150px', marginTop: '20px' }} variant="contained">
                                                 Read More
                                             </Button>

@@ -22,7 +22,7 @@ export const RenderMenuItems = (
         if (type === 'nav') {
             return (
                 <Link href={path || '#'} passHref key={index} style={{ textDecoration: 'none' }}>
-                    <MenuItem sx={{ color: 'white', textDecoration: 'none' }} onClick={handleClose}>
+                    <MenuItem sx={{ color: 'white', textDecoration: 'none', fontSize: '18px' }} onClick={handleClose}>
                         {label}
                     </MenuItem>
                 </Link>
@@ -36,6 +36,7 @@ export const RenderMenuItems = (
                     key={`submenu-item-${index}`}
                     sx={{
                         color: 'white',
+                        fontSize: '18px',
                         '& .Mui-selected': {
                             color: theme.palette.primary.main,
                         },
