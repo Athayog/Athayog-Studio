@@ -5,7 +5,7 @@ import StatsAdiyogiSvg from '@/app/images/stats-adiyogi.svg';
 import StatsCalendarSvg from '@/app/images/stats-calendar.svg';
 import StatsGraduateSvg from '@/app/images/stats-graduate.svg';
 import StateTransformationSvg from '@/app/images/stats-transformation.svg';
-import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
+import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
 
 // Define type for statistics data
 type Stat = {

@@ -2,7 +2,7 @@ import PCOSHeroImage from '@/app/images/pcos-page/hero.png';
 import HeroVector from '@/app/images/pcos-page/HeroVector.svg';
 import { Box } from '@mui/material';
 import Image from 'next/image';
-import RegisterButton from '../../ui/common/elements/button/RegisterButton';
+import RegisterButton from '../../common/elements/button/RegisterButton';
 import { Subtitle, Title } from './styles/Index';
 import { Layout } from './styles/Layout';
 

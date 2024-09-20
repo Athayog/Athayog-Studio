@@ -1,9 +1,9 @@
-import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
+import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Box, Collapse, IconButton, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import RegisterButton from '../../ui/common/elements/button/RegisterButton';
-import theme from '../../ui/theme';
+import RegisterButton from '../../common/elements/button/RegisterButton';
+import theme from '../../theme';
 
 // Sample FAQ data
 const FAQS = [

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Button, Typography, Divider, Stack } from '@mui/material';
 import { Google as GoogleIcon } from '@mui/icons-material';
 import { useRouter } from 'next/navigation';
-import { SignupContainer } from '@/app/components/pages/auth/signup/styles/Index';
+import { SignupContainer } from '@/app/components/ui/pages/auth/signup/styles/Index';
 import useAuthStore from '@/store/useAuthStore';
 import Skeletons from '@/app/components/ui/common/Skeleton/Index';
 import { SkeletonTypes } from '@/app/constants/skeleton';

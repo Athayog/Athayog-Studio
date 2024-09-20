@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
-import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
+import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
 import theme from '@/app/components/ui/theme';
 import { TableRow as MuiTableRow, TableCell as MuiTableCell, Table as MuiTable } from '@mui/material';
 import { Box, Button, TableRow, TableBody, TableContainer, TableHead, Paper, Typography, styled } from '@mui/material';

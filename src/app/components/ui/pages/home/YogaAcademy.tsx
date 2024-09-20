@@ -8,7 +8,7 @@ import { Box, Skeleton, Typography, styled } from '@mui/material';
 import { Navigation, Pagination } from 'swiper/modules';
 import CarouselSample from '@/app/images/CarouselSample.png';
 import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
-import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
+import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
 
 // Styled Components
 const SwiperContainer = styled(Box)(({ theme }) => ({

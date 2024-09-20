@@ -7,7 +7,7 @@ import {
     HeroContainer,
     SubTitle,
     videoStyles,
-} from '@/app/components/pages/home/styles/Hero';
+} from '@/app/components/ui/pages/home/styles/Hero';
 import React from 'react';
 
 const Hero = () => {

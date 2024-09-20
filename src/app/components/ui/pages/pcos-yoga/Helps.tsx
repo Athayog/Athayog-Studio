@@ -1,9 +1,8 @@
 import React from 'react';
+import theme from '@/app/components/ui/theme';
 import { Box, Typography } from '@mui/material';
-import theme from '../../ui/theme';
-import { Title } from './styles/Index';
-import { Layout } from './styles/Layout';
-import Grid from '@mui/material/Grid2';
+import { Title } from '@/app/components/ui/pages/pcos-yoga/styles/Index';
+import { Layout } from '@/app/components/ui/pages/pcos-yoga/styles/Layout';
 
 const Helps = () => {
     const CausesPoints = [
@@ -36,27 +35,38 @@ const Helps = () => {
                 }}
             >
                 <Title>How Yoga Helps</Title>
-                <Grid container spacing={3} rowSpacing={2}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: '20px',
+                        justifyContent: 'space-between',
+                    }}
+                >
                     {CausesPoints.map((item, index) => (
-                        <Grid
-                            item
-                            xs={12}
-                            sm={6}
-                            md={4}
+                        <Box
                             key={index}
                             sx={{
+                                flexBasis: 'calc(33.333% - 20px)', // Ensure 3 items per row with a gap of 20px
+                                flexGrow: 1,
                                 borderRadius: '14px',
                                 border: '2.5px solid #e3a6bd',
                                 padding: '20px 30px',
                                 background:
                                     'linear-gradient(180deg, rgba(240, 162, 195, 0.30) 0%, rgba(237, 161, 250, 0.30) 100%)',
+                                [theme.breakpoints.down('md')]: {
+                                    flexBasis: 'calc(50% - 20px)', // 2 items per row on medium screens
+                                },
+                                [theme.breakpoints.down('sm')]: {
+                                    flexBasis: '100%', // 1 item per row on small screens
+                                },
                             }}
                         >
                             <Typography
                                 sx={{
                                     color: '#99163E',
                                     fontSize: '24px',
-                                    fontWeight: '600',
+                                    fontWeight: '700',
                                     [theme.breakpoints.down('md')]: {
                                         fontSize: '18px',
                                     },
@@ -76,9 +86,9 @@ const Helps = () => {
                             >
                                 {item.description}
                             </Typography>
-                        </Grid>
+                        </Box>
                     ))}
-                </Grid>
+                </Box>
             </Box>
         </Layout>
     );

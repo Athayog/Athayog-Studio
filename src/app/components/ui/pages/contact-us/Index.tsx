@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import theme from '@/app/components/ui/theme';
 import useFormStore from '@/store/useFormStore';
 import MapIcon from '@/app/images/contact-us/map.svg';
-import Hero from '@/app/components/pages/contact-us/Hero';
+import Hero from '@/app/components/ui/pages/contact-us/Hero';
 import PhoneIcon from '@/app/images/contact-us/phone.svg';
 import MailIcon from '@/app/images/contact-us/contact.svg';
 import { Formik, Field, Form, ErrorMessage, FormikHelpers } from 'formik';

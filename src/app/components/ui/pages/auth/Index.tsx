@@ -1,6 +1,6 @@
 'use client';
-import Signup from '@/app/components/pages/auth/signup/Index';
-import { AuthPageContainer } from '@/app/components/pages/auth/styles/Index';
+import Signup from '@/app/components/ui/pages/auth/signup/Index';
+import { AuthPageContainer } from '@/app/components/ui/pages/auth/styles/Index';
 
 const AuthPage: React.FC = () => {
     return (

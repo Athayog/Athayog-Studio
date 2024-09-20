@@ -1,11 +1,11 @@
-import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
+import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
 import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
 import { Box, Typography } from '@mui/material';
 import { YouTubeEmbed } from '@next/third-parties/google';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import theme from '../../ui/theme';
+import theme from '../../theme';
 
 const YogaArambha = () => {
     return (

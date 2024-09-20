@@ -8,7 +8,7 @@ import CarouselSample4 from '@/app/images/Sample (4).png';
 import ResponsiveImage from '@/app/components/ui/common/ResposiveImage';
 import HorizontalSwiper from '@/app/components/ui/common/Swiper/HorizontalSwiper';
 import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
-import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
+import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
 
 const Title = styled(Typography)(({ theme }) => ({
     fontSize: '48px',

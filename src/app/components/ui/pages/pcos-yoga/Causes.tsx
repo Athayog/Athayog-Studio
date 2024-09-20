@@ -3,7 +3,7 @@ import React from 'react';
 import { Layout } from './styles/Layout';
 import ConstipationImage from '@/app/images/pcos-page/constipation.png';
 import Image from 'next/image';
-import theme from '../../ui/theme';
+import theme from '../../theme';
 import { Title } from './styles/Index';
 
 const Causes = () => {

@@ -1,9 +1,10 @@
 import PCOSHeroImage from '@/app/images/pcos-page/hero.png';
 import { Box } from '@mui/material';
 import Image from 'next/image';
-import RegisterButton from '../../ui/common/elements/button/RegisterButton';
+import RegisterButton from '../../common/elements/button/RegisterButton';
 import { Subtitle, Title } from './styles/Index';
 import { Layout } from './styles/Layout';
+import theme from '../../theme';
 
 const HeroMobile = () => {
     return (
@@ -13,13 +14,12 @@ const HeroMobile = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '50px',
-
                     justifyContent: 'space-between',
-                    alignItems: 'center',
+                    alignItems: 'baseline',
                     paddingTop: '120px',
                 }}
             >
-                <Box sx={{ flexBasis: '50%', maxWidth: '600px' }}>
+                <Box sx={{ flexBasis: '50%' }}>
                     <Title>Join Our PCOS Yoga Class</Title>
                     <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                         <RegisterButton
@@ -32,37 +32,35 @@ const HeroMobile = () => {
                                 height: '53px',
                                 marginRight: '20px',
                                 width: '211px',
+                                minWidth: 'content',
                                 fontSize: '22px',
+                                padding: '0px',
                             }}
                         >
                             Register Now
                         </RegisterButton>
 
-                        {/* Image Container */}
                         <Box sx={{ position: 'relative' }}>
                             <Box
                                 sx={{
                                     flexBasis: '50%',
                                     maxWidth: '600px',
-                                    position: 'absolute',
+                                    position: 'relative',
                                     height: 'auto',
-                                    width: '341px',
-                                    left: '-100px',
                                     overflow: 'hidden',
                                 }}
                             >
-                                {/* <Image
+                                <Image
                                     src={PCOSHeroImage}
                                     alt="PCOS Image"
                                     layout="responsive"
                                     height={500}
                                     width={600}
                                     style={{ overflow: 'hidden' }}
-                                /> */}
+                                />
                             </Box>
                         </Box>
                     </Box>
-                    <Box sx={{ height: '350px' }}></Box>
                     <Subtitle>
                         Polycystic Ovary Syndrome (PCOS) is a hormonal disorder affecting those with ovaries. It’s
                         characterised by irregular menstrual cycles, elevated androgen levels, and polycystic ovaries.

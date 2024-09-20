@@ -5,7 +5,7 @@ import RYTImage from '@/app/images/RYT.jpg';
 import Svayasa from '@/app/images/svyasa.png';
 import AyushImage from '@/app/images/Ayush.png';
 import { Box, Typography, Stack } from '@mui/material';
-import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
+import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
 
 // Styled components using MUI's styled
 const Container = styled(Box)(({ theme }) => ({

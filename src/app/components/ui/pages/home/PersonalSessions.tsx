@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Box, Typography, styled } from '@mui/material';
 import PersonalSessionImage from '@/app/images/PersonalSession.png';
 import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
-import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
+import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
 
 // Styled Components
 const Container = styled(Box)(({ theme }) => ({

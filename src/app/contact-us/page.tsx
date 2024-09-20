@@ -1,6 +1,6 @@
 'use client';
 
-import ContactUs from '../components/pages/contact-us/Index';
+import ContactUs from '../components/ui/pages/contact-us/Index';
 
 function Page() {
     return (

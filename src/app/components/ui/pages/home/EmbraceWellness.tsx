@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 import { Box, IconButton, styled, Typography } from '@mui/material';
 import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
-import { SectionContent, SectionPadding } from '@/app/components/pages/home/styles/Layout';
+import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
 
 const AthayogSwiper = styled(Box)(() => ({
     '.swiper-yoga': {
