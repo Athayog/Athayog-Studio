@@ -2,9 +2,8 @@ import PCOSHeroImage from '@/app/images/pcos-page/hero.png';
 import { Box } from '@mui/material';
 import Image from 'next/image';
 import RegisterButton from '../../common/elements/button/RegisterButton';
-import { Subtitle, Title } from './styles/Index';
+import { Subtitle, Title } from '@/app/components/ui/pages/pcos-yoga/styles/Index';
 import { Layout } from './styles/Layout';
-import theme from '../../theme';
 
 const HeroMobile = () => {
     return (
@@ -56,7 +55,11 @@ const HeroMobile = () => {
                                     layout="responsive"
                                     height={500}
                                     width={600}
-                                    style={{ overflow: 'hidden' }}
+                                    style={{
+                                        overflow: 'hidden',
+                                        WebkitTransform: 'scaleX(-1)', // for Safari
+                                        transform: 'scaleX(-1)',
+                                    }}
                                 />
                             </Box>
                         </Box>

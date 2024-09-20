@@ -5,7 +5,7 @@ import { YouTubeEmbed } from '@next/third-parties/google';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import theme from '../../theme';
+import theme from '@/app/components/ui/theme';
 
 const YogaArambha = () => {
     return (

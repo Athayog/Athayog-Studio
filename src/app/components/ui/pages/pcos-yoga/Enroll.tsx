@@ -1,8 +1,9 @@
 import React from 'react';
+import theme from '@/app/components/ui/theme';
+import { Box, Typography } from '@mui/material';
+import { Title } from '@/app/components/ui/pages/pcos-yoga/styles/Index';
 import { Layout } from '@/app/components/ui/pages/pcos-yoga/styles/Layout';
-import { Title } from './styles/Index';
-import { Box, Button, Typography } from '@mui/material';
-import theme from '../../theme';
+import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
 const Enroll = () => {
     return (
         <Layout>
@@ -107,21 +108,17 @@ const Enroll = () => {
                         4:00 PM - 5:00 PM, Mon-Sat
                     </Box>
                 </Box>
-                <Button
+                <RegisterButton
                     sx={{
                         background: 'linear-gradient(0deg, #C32A58 0%, #C32A58 100%)',
-                        marginTop: '50px',
-                        borderRadius: '46.578px',
-                        height: '77px',
-                        width: '313px',
-                        color: '#fff',
-                        boxShadow: '0px 1px 2px 0px rgba(0, 0, 0, 0.44)',
-                        fontSize: '26px',
-                        fontWeight: '700',
+                        '&:hover': {
+                            background: 'linear-gradient(0deg, #B22952 0%, #B22952 100%)',
+                            color: 'white',
+                        },
                     }}
                 >
                     Join Now
-                </Button>
+                </RegisterButton>
             </Box>
         </Layout>
     );

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
 import theme from '@/app/components/ui/theme';
-import { Title } from './styles/Index';
-import { Layout } from './styles/Layout';
-import ReproductiveImage from '@/app/images/pcos-page/reproductive.svg';
+import { Box, Typography } from '@mui/material';
 import SlimImage from '@/app/images/pcos-page/Slim.svg';
 import StressImage from '@/app/images/pcos-page/stress.svg';
+import ReproductiveImage from '@/app/images/pcos-page/reproductive.svg';
+import { Title } from '@/app/components/ui/pages/pcos-yoga/styles/Index';
+import { Layout } from '@/app/components/ui/pages/pcos-yoga/styles/Layout';
 import MenstrualCycleImage from '@/app/images/pcos-page/menstrual-cycle.svg';
 
 const WhyJoin = () => {

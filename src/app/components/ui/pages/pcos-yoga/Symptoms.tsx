@@ -1,8 +1,8 @@
 import React from 'react';
+import theme from '@/app/components/ui/theme';
 import { Box, Typography } from '@mui/material';
-import theme from '../../theme';
-import { Title } from './styles/Index';
-import { Layout } from './styles/Layout';
+import { Title } from '@/app/components/ui/pages/pcos-yoga/styles/Index';
+import { Layout } from '@/app/components/ui/pages/pcos-yoga/styles/Layout';
 
 const Symptoms = () => {
     const symptomsPoints = [

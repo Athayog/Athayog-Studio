@@ -1,10 +1,10 @@
-import { Box, Typography } from '@mui/material';
 import React from 'react';
-import { Layout } from './styles/Layout';
-import ConstipationImage from '@/app/images/pcos-page/constipation.png';
 import Image from 'next/image';
-import theme from '../../theme';
-import { Title } from './styles/Index';
+import theme from '@/app/components/ui/theme';
+import { Box, Typography } from '@mui/material';
+import ConstipationImage from '@/app/images/pcos-page/constipation.png';
+import { Title } from '@/app/components/ui/pages/pcos-yoga/styles/Index';
+import { Layout } from '@/app/components/ui/pages/pcos-yoga/styles/Layout';
 
 const Causes = () => {
     const CausesPoints = [

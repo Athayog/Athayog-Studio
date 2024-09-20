@@ -1,5 +1,5 @@
-import theme from '@/app/components/ui/theme';
 import { Box, styled } from '@mui/material';
+import theme from '@/app/components/ui/theme';
 
 export const Layout = styled(Box)(() => ({
     maxWidth: '1440px',

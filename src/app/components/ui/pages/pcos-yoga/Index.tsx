@@ -2,10 +2,10 @@ import { Box } from '@mui/material';
 import Hero from '@/app/components/ui/pages/pcos-yoga/Hero';
 import Helps from '@/app/components/ui/pages/pcos-yoga/Helps';
 import Causes from '@/app/components/ui/pages/pcos-yoga/Causes';
+import Enroll from '@/app/components/ui/pages/pcos-yoga/Enroll';
+import WhyJoin from '@/app/components/ui/pages/pcos-yoga/WhyJoin';
 import Symptoms from '@/app/components/ui/pages/pcos-yoga/Symptoms';
 import YogaPractices from '@/app/components/ui/pages/pcos-yoga/YogaPractices';
-import WhyJoin from '@/app/components/ui/pages/pcos-yoga/WhyJoin';
-import Enroll from '@/app/components/ui/pages/pcos-yoga/Enroll';
 const PCOSYoga = () => {
     return (
         <Box
