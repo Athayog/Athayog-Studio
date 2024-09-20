@@ -1,4 +1,4 @@
-import HomePage from '@/app/components/pages/home/Index';
+import HomePage from '@/app/components/ui/pages/home/Index';
 
 export const metadata = {
     title: 'Athayog',

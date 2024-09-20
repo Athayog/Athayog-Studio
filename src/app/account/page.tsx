@@ -1,5 +1,5 @@
 'use client';
-import AccountPage from '@/app/components/pages/auth/account/Index';
+import AccountPage from '@/app/components/ui/pages/auth/account/Index';
 import useThemeStore from '@/store/useThemeStore';
 import { Box } from '@mui/material';
 import { useEffect } from 'react';

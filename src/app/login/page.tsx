@@ -1,5 +1,5 @@
 'use client';
-import LoginPage from '@/app/components/pages/auth/Index';
+import LoginPage from '@/app/components/ui/pages/auth/Index';
 import useThemeStore from '@/store/useThemeStore';
 import { useEffect } from 'react';
 
