@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { Typography, Container } from '@mui/material';
 import useAuthStore from '@/store/useAuthStore';

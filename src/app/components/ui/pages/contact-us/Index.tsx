@@ -1,3 +1,4 @@
+'use client';
 import * as Yup from 'yup';
 import { styled } from '@mui/system';
 import React, { useState } from 'react';

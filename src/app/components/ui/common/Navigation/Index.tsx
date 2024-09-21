@@ -1,15 +1,7 @@
 'use client';
 import MobileDrawer from '@/app/components/ui/common/Navigation/MobileDrawer';
 import { RenderMenuItems } from '@/app/components/ui/common/Navigation/RenderMenuItems';
-import {
-    Menu,
-    MenuButton,
-    NavContainer,
-    NavLinkButton,
-    Toolbar,
-    TrialButton,
-    TrialAndAuth,
-} from '@/app/components/ui/common/Navigation/styles/Index';
+import { Menu, MenuButton, NavContainer, NavLinkButton, Toolbar, TrialButton, TrialAndAuth } from '@/app/components/ui/common/Navigation/styles/Index';
 import { navItems } from '@/app/constants/navItems';
 import Logo from '@/app/images/Logo.png';
 import { AppBar, Box } from '@mui/material';
@@ -51,14 +43,15 @@ const Navbar: React.FC = () => {
         return unsubscribe;
     }, [initializeAuth]);
 
+    console.log('isScrolled', isScrolled);
     return (
         <AppBar
             position="fixed"
             sx={{
-                backgroundColor: isScrolled ? '#556940' : 'transparent', // Dynamically change based on scroll
+                background: isScrolled ? '#556940' : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%)',
                 boxShadow: 'none',
                 padding: isScrolled ? '10px 20px' : '25px 20px',
-                transition: 'padding 0.5s ease-in-out, background-color 0.5s ease-in-out',
+                transition: 'padding 0.5s ease-in-out, background 0.5s ease-in-out',
             }}
         >
             <ScrollListener />
@@ -71,13 +64,7 @@ const Navbar: React.FC = () => {
                 >
                     <Link href={'/'} passHref={true}>
                         {' '}
-                        <Image
-                            src={Logo}
-                            alt="athayog logo"
-                            width={67}
-                            height={67}
-                            style={{ width: '100%', height: 'auto' }}
-                        />
+                        <Image src={Logo} alt="athayog logo" width={67} height={67} style={{ width: '100%', height: 'auto' }} />
                     </Link>
                 </Box>
 
@@ -86,12 +73,7 @@ const Navbar: React.FC = () => {
                         if (type === 'nav') {
                             return (
                                 <Link href={path ? path : '/'} passHref={true} key={index}>
-                                    <NavLinkButton
-                                        variant="text"
-                                        pathname={pathname}
-                                        path={path ? path : '/'}
-                                        navigationVariant={navigationVariant}
-                                    >
+                                    <NavLinkButton variant="text" pathname={pathname} path={path ? path : '/'} navigationVariant={navigationVariant}>
                                         {label}
                                     </NavLinkButton>
                                 </Link>
@@ -99,12 +81,7 @@ const Navbar: React.FC = () => {
                         } else if (type === 'menu' && children) {
                             return (
                                 <React.Fragment key={index}>
-                                    <MenuButton
-                                        variant="text"
-                                        aria-controls={anchorEl ? `submenu-${index}` : undefined}
-                                        aria-haspopup="true"
-                                        onClick={(event) => handleClick(event, children)}
-                                    >
+                                    <MenuButton variant="text" aria-controls={anchorEl ? `submenu-${index}` : undefined} aria-haspopup="true" onClick={(event) => handleClick(event, children)}>
                                         {label}
                                     </MenuButton>
                                     <Menu
