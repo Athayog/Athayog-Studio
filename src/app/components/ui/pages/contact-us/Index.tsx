@@ -2,7 +2,7 @@
 import * as Yup from 'yup';
 import { styled } from '@mui/system';
 import React, { useState } from 'react';
-import theme from '@/app/components/ui/theme';
+import theme from '@/app/styles/theme';
 import useFormStore from '@/store/useFormStore';
 import MapIcon from '@/app/images/contact-us/map.svg';
 import Hero from '@/app/components/ui/pages/contact-us/Hero';
@@ -175,8 +175,7 @@ const ContactUs = () => {
                             },
                         }}
                     >
-                        Join AthaYog&apos;s exclusive contact sessions tailored, one-on-one guidance to deepen your
-                        practice and achieve personalised yoga goals. Connect with our experts today!
+                        Join AthaYog&apos;s exclusive contact sessions tailored, one-on-one guidance to deepen your practice and achieve personalised yoga goals. Connect with our experts today!
                     </Typography>
                     <ContactDetails>
                         <Typography
@@ -217,32 +216,20 @@ const ContactUs = () => {
                                 },
                             }}
                         >
-                            <a
-                                href="tel:+91 8690333111"
-                                style={{ color: 'black', display: 'flex', alignItems: 'center' }}
-                            >
+                            <a href="tel:+91 8690333111" style={{ color: 'black', display: 'flex', alignItems: 'center' }}>
                                 <MailIcon style={{ marginRight: '10px' }} />
                                 info@athayogliving.com
                             </a>
                         </Typography>
                     </ContactDetails>
                 </Box>
-                <Snackbar
-                    open={!!snackbar}
-                    autoHideDuration={6000}
-                    onClose={handleCloseSnackbar}
-                    anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-                >
+                <Snackbar open={!!snackbar} autoHideDuration={6000} onClose={handleCloseSnackbar} anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
                     <Alert onClose={handleCloseSnackbar} severity={snackbar?.type} sx={{ width: '100%' }}>
                         {snackbar?.message}
                     </Alert>
                 </Snackbar>
                 <Box>
-                    <Formik
-                        initialValues={{ name: '', email: '', phone: '', message: '' }}
-                        validationSchema={validationSchema}
-                        onSubmit={handleSubmit}
-                    >
+                    <Formik initialValues={{ name: '', email: '', phone: '', message: '' }} validationSchema={validationSchema} onSubmit={handleSubmit}>
                         {({ isSubmitting }) => (
                             <Form>
                                 <ContactFormContainer>

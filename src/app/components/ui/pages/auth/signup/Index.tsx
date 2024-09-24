@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { SignupContainer } from '@/app/components/ui/pages/auth/signup/styles/Index';
 import useAuthStore from '@/store/useAuthStore';
 import Skeletons from '@/app/components/ui/common/Skeleton/Index';
-import { SkeletonTypes } from '@/app/constants/skeleton';
+import { SkeletonTypes } from '@/constants/skeleton';
 
 const Signup: React.FC = () => {
     const router = useRouter();
@@ -25,20 +25,11 @@ const Signup: React.FC = () => {
     return (
         <SignupContainer>
             <Skeletons loading={loading} type={SkeletonTypes.LOGIN} width="80%" height={20}>
-                <Stack
-                    direction="column"
-                    spacing={2}
-                    sx={{ boxShadow: 1, backgroundColor: '#fff', borderRadius: '2px', p: 3, height: '100vd' }}
-                >
+                <Stack direction="column" spacing={2} sx={{ boxShadow: 1, backgroundColor: '#fff', borderRadius: '2px', p: 3, height: '100vd' }}>
                     <Typography component="h1" variant="h4" sx={{ width: '100%', fontSize: '20px' }}>
                         Join us into your Yoga Journey
                     </Typography>
-                    <Button
-                        variant="contained"
-                        startIcon={<GoogleIcon />}
-                        onClick={handleSignIn}
-                        sx={{ mb: 2, width: '100%', maxWidth: '300px' }}
-                    >
+                    <Button variant="contained" startIcon={<GoogleIcon />} onClick={handleSignIn} sx={{ mb: 2, width: '100%', maxWidth: '300px' }}>
                         Sign in with Google
                     </Button>
 

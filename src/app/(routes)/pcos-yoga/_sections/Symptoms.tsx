@@ -1,17 +1,11 @@
 import React from 'react';
-import theme from '@/app/components/ui/theme';
+import theme from '@/app/styles/theme';
 import { Box, Typography } from '@mui/material';
 import { Title } from '@/app/components/ui/pages/pcos-yoga/styles/Index';
 import { Layout } from '@/app/components/ui/pages/pcos-yoga/styles/Layout';
 
 const Symptoms = () => {
-    const symptomsPoints = [
-        'Irregular menstrual cycles',
-        'Excess hair growth and acne',
-        'Weight gain or difficulty losing weight',
-        'Skin issues Fertility challenges',
-        'Mood swings and pelvic pain',
-    ];
+    const symptomsPoints = ['Irregular menstrual cycles', 'Excess hair growth and acne', 'Weight gain or difficulty losing weight', 'Skin issues Fertility challenges', 'Mood swings and pelvic pain'];
 
     return (
         <Layout>

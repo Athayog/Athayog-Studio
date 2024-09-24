@@ -16,7 +16,7 @@ export const navItems: NavItem[] = [
             { label: 'Group Class', path: '/group-class', type: 'nav' },
             {
                 label: 'Personal Training',
-                path: '/personal-training',
+                path: '/personal-session',
                 type: 'nav',
             },
             { label: 'Workshop', path: '/workshop', type: 'nav' },

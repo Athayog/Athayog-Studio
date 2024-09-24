@@ -5,7 +5,8 @@ import { YouTubeEmbed } from '@next/third-parties/google';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import theme from '@/app/components/ui/theme';
+import theme from '@/app/styles/theme';
+import Title from '@/app/components/ui/common/Typography/Title';
 
 const YogaArambha = () => {
     return (
@@ -23,20 +24,17 @@ const YogaArambha = () => {
                     }}
                 >
                     <Box sx={{ maxWidth: '550px', position: 'relative' }}>
-                        <Typography
+                        <Title
                             sx={{
-                                fontSize: '48px',
                                 color: '#202020',
-                                fontWeight: '700',
+                                textAlign: 'left',
                                 [theme.breakpoints.down('md')]: {
-                                    fontSize: '28px',
                                     marginTop: '0px',
-                                    textAlign: 'center',
                                 },
                             }}
                         >
                             Yoga Arambha
-                        </Typography>
+                        </Title>
 
                         <Typography
                             sx={{
@@ -49,10 +47,9 @@ const YogaArambha = () => {
                                 },
                             }}
                         >
-                            AthaYog Living and Indiranagar Club present &quot;Yoga Arambha&quot; on International Day of
-                            Yoga, celebrating women&apos;s strength and resilience. Featuring a special Yoga session and
-                            talent showcase, this event marks the start of a wellness journey. <br /> Chief Guest BNS
-                            Reddy IPS (Retd.), President of Indiranagar Club, will honor us with his presence.
+                            AthaYog Living and Indiranagar Club present &quot;Yoga Arambha&quot; on International Day of Yoga, celebrating women&apos;s strength and resilience. Featuring a special
+                            Yoga session and talent showcase, this event marks the start of a wellness journey. <br /> Chief Guest BNS Reddy IPS (Retd.), President of Indiranagar Club, will honor us
+                            with his presence.
                         </Typography>
                         <Box
                             sx={{

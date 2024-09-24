@@ -1,4 +1,4 @@
-import theme from '@/app/components/ui/theme';
+import theme from '@/app/styles/theme';
 import { Box, styled } from '@mui/material';
 
 export const SectionPadding = styled(Box)(() => ({

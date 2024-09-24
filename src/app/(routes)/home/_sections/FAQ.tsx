@@ -3,7 +3,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Box, Collapse, IconButton, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import RegisterButton from '../../../components/ui/common/elements/button/RegisterButton';
-import theme from '@/app/components/ui/theme';
+import theme from '@/app/styles/theme';
 
 // Sample FAQ data
 const FAQS = [

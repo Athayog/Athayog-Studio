@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
 import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
-import theme from '@/app/components/ui/theme';
+import theme from '@/app/styles/theme';
 import { TableRow as MuiTableRow, TableCell as MuiTableCell, Table as MuiTable } from '@mui/material';
 import { Box, Button, TableRow, TableBody, TableContainer, TableHead, Paper, Typography, styled } from '@mui/material';
 
@@ -121,10 +121,7 @@ const YogaTable: React.FC = () => {
                                     <TableRowBody
                                         key={index}
                                         sx={{
-                                            backgroundColor:
-                                                index % 2 === 0
-                                                    ? 'rgba(132, 162, 118, 0.1)'
-                                                    : 'rgba(162, 205, 177, 0.25)',
+                                            backgroundColor: index % 2 === 0 ? 'rgba(132, 162, 118, 0.1)' : 'rgba(162, 205, 177, 0.25)',
                                         }}
                                     >
                                         <TableCell>{row.date}</TableCell>
@@ -151,11 +148,7 @@ const YogaTable: React.FC = () => {
                         }}
                     >
                         {Object.keys(data).map((month) => (
-                            <Button
-                                key={month}
-                                variant={selectedMonth === month ? 'contained' : 'outlined'}
-                                onClick={() => handleMonthChange(month as MonthKey)}
-                            >
+                            <Button key={month} variant={selectedMonth === month ? 'contained' : 'outlined'} onClick={() => handleMonthChange(month as MonthKey)}>
                                 {month}
                             </Button>
                         ))}
