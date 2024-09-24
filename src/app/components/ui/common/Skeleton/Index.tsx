@@ -1,6 +1,6 @@
 import React from 'react';
 import { Skeleton } from '@mui/material';
-import { SkeletonType, SkeletonTypes } from '@/app/constants/skeleton';
+import { SkeletonType, SkeletonTypes } from '@/constants/skeleton';
 
 interface SkeletonProps {
     type: SkeletonType;
@@ -11,14 +11,7 @@ interface SkeletonProps {
     children?: React.ReactNode;
 }
 
-const Skeletons: React.FC<SkeletonProps> = ({
-    type,
-    width = '100%',
-    height = '100%',
-    borderRadius,
-    loading,
-    children,
-}) => {
+const Skeletons: React.FC<SkeletonProps> = ({ type, width = '100%', height = '100%', borderRadius, loading, children }) => {
     const skeletonStyle = {
         width,
         height,

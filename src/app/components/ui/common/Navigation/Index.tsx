@@ -2,7 +2,7 @@
 import MobileDrawer from '@/app/components/ui/common/Navigation/MobileDrawer';
 import { RenderMenuItems } from '@/app/components/ui/common/Navigation/RenderMenuItems';
 import { Menu, MenuButton, NavContainer, NavLinkButton, Toolbar, TrialButton, TrialAndAuth } from '@/app/components/ui/common/Navigation/styles/Index';
-import { navItems } from '@/app/constants/navItems';
+import { navItems } from '@/constants/navItems';
 import Logo from '@/app/images/Logo.png';
 import { AppBar, Box } from '@mui/material';
 import Image from 'next/image';
@@ -43,7 +43,6 @@ const Navbar: React.FC = () => {
         return unsubscribe;
     }, [initializeAuth]);
 
-    console.log('isScrolled', isScrolled);
     return (
         <AppBar
             position="fixed"
@@ -89,6 +88,7 @@ const Navbar: React.FC = () => {
                                         anchorEl={anchorEl}
                                         open={Boolean(anchorEl)}
                                         onClose={handleClose}
+                                        disableScrollLock={true}
                                         MenuListProps={{
                                             'aria-labelledby': `submenu-button-${index}`,
                                         }}

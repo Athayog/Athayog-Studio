@@ -1,5 +1,5 @@
 import React from 'react';
-import theme from '@/app/components/ui/theme';
+import theme from '@/app/styles/theme';
 import { Box, Typography } from '@mui/material';
 import SlimImage from '@/app/images/pcos-page/Slim.svg';
 import StressImage from '@/app/images/pcos-page/stress.svg';

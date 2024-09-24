@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import theme from '@/app/components/ui/theme';
+import theme from '@/app/styles/theme';
 import { Box, Typography } from '@mui/material';
 import ConstipationImage from '@/app/images/pcos-page/constipation.png';
 import { Title } from '@/app/components/ui/pages/pcos-yoga/styles/Index';
@@ -15,8 +15,7 @@ const Causes = () => {
         { title: 'Genetics', description: 'Family history can play a role in developing PCOS' },
         {
             title: 'Inflammation',
-            description:
-                ' Chronic low-grade inflammation may contribute to insulin resistance and hormonal imbalances.',
+            description: ' Chronic low-grade inflammation may contribute to insulin resistance and hormonal imbalances.',
         },
         { title: 'Lifestyle Factors', description: 'Poor diet, lack of exercise and obesity can worsen symptoms.' },
         { title: 'Developmental Factors', description: 'Factors like premature birth may increase the risk.' },
@@ -88,14 +87,7 @@ const Causes = () => {
                         overflow: 'hidden',
                     }}
                 >
-                    <Image
-                        src={ConstipationImage}
-                        alt="PCOS Image"
-                        layout="responsive"
-                        height={500}
-                        width={600}
-                        placeholder="blur"
-                    />
+                    <Image src={ConstipationImage} alt="PCOS Image" layout="responsive" height={500} width={600} placeholder="blur" />
                 </Box>
             </Box>
         </Layout>

@@ -1,5 +1,5 @@
 import React from 'react';
-import theme from '@/app/components/ui/theme';
+import theme from '@/app/styles/theme';
 import { Box, Typography } from '@mui/material';
 import { Title } from '@/app/components/ui/pages/pcos-yoga/styles/Index';
 import { Layout } from '@/app/components/ui/pages/pcos-yoga/styles/Layout';
@@ -52,8 +52,7 @@ const Helps = () => {
                                 borderRadius: '14px',
                                 border: '2.5px solid #e3a6bd',
                                 padding: '20px 30px',
-                                background:
-                                    'linear-gradient(180deg, rgba(240, 162, 195, 0.30) 0%, rgba(237, 161, 250, 0.30) 100%)',
+                                background: 'linear-gradient(180deg, rgba(240, 162, 195, 0.30) 0%, rgba(237, 161, 250, 0.30) 100%)',
                                 [theme.breakpoints.down('md')]: {
                                     flexBasis: 'calc(50% - 20px)', // 2 items per row on medium screens
                                 },

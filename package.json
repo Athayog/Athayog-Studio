@@ -1,43 +1,43 @@
 {
-  "name": "athayog-studio",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@emotion/cache": "^11.13.1",
-    "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0",
-    "@mui/icons-material": "^6.0.2",
-    "@mui/material": "^6.0.2",
-    "@mui/material-nextjs": "^6.0.2",
-    "@next/third-parties": "^14.2.11",
-    "@react-spring/web": "^9.7.4",
-    "@svgr/webpack": "^8.1.0",
-    "@types/swiper": "^6.0.0",
-    "firebase": "^10.13.1",
-    "formik": "^2.4.6",
-    "lodash": "^4.17.21",
-    "next": "^14.2.11",
-    "nextjs-toploader": "^3.6.15",
-    "react": "^18",
-    "react-dom": "^18",
-    "swiper": "^11.1.14",
-    "yup": "^1.4.0",
-    "zustand": "^4.5.5"
-  },
-  "devDependencies": {
-    "@types/css-mediaquery": "^0.1.4",
-    "@types/lodash": "^4.17.7",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.8",
-    "typescript": "^5"
-  }
+    "name": "athayog-studio",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@emotion/cache": "^11.13.1",
+        "@emotion/react": "^11.13.3",
+        "@emotion/styled": "^11.13.0",
+        "@mui/icons-material": "^6.0.2",
+        "@mui/material": "^6.0.2",
+        "@mui/material-nextjs": "^6.0.2",
+        "@next/third-parties": "^14.2.11",
+        "@react-spring/web": "^9.7.4",
+        "@svgr/webpack": "^8.1.0",
+        "@types/swiper": "^6.0.0",
+        "firebase": "^10.13.1",
+        "formik": "^2.4.6",
+        "lodash": "^4.17.21",
+        "next": "^14.2.11",
+        "nextjs-toploader": "^3.6.15",
+        "react": "^18",
+        "react-dom": "^18",
+        "swiper": "^11.1.14",
+        "yup": "^1.4.0",
+        "zustand": "^4.5.5"
+    },
+    "devDependencies": {
+        "@types/css-mediaquery": "^0.1.4",
+        "@types/lodash": "^4.17.7",
+        "@types/node": "^20",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "eslint": "^8",
+        "eslint-config-next": "14.2.8",
+        "typescript": "^5"
+    }
 }

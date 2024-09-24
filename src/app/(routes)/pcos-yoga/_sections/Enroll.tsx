@@ -1,5 +1,5 @@
 import React from 'react';
-import theme from '@/app/components/ui/theme';
+import theme from '@/app/styles/theme';
 import { Box, Typography } from '@mui/material';
 import { Title } from '@/app/components/ui/pages/pcos-yoga/styles/Index';
 import { Layout } from '@/app/components/ui/pages/pcos-yoga/styles/Layout';
@@ -27,8 +27,7 @@ const Enroll = () => {
                         },
                     }}
                 >
-                    Find balance, strength and relief with our specialised yoga program. Sign up today and take the
-                    first step towards better health!
+                    Find balance, strength and relief with our specialised yoga program. Sign up today and take the first step towards better health!
                 </Typography>
                 <Box
                     sx={{

@@ -1,4 +1,4 @@
-import theme from '@/app/components/ui/theme';
+import theme from '@/app/styles/theme';
 import { Button } from '@mui/material';
 import { styled } from '@mui/system';
 

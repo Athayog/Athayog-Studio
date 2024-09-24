@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import theme from '@/app/components/ui/theme';
+import theme from '@/app/styles/theme';
 import { MenuItem } from '@mui/material';
 import ArrowRightRoundedIcon from '@mui/icons-material/ArrowRightRounded';
 import { Menu } from '@/app/components/ui/common/Navigation/styles/RenderMenuItems';
@@ -12,12 +12,7 @@ interface MenuItemProps {
     children?: MenuItemProps[];
 }
 
-export const RenderMenuItems = (
-    items: MenuItemProps[],
-    handleClose: () => void,
-    handleSubMenuClick: (event: React.MouseEvent<HTMLElement>) => void,
-    subMenuAnchorEl: HTMLElement | null
-) => {
+export const RenderMenuItems = (items: MenuItemProps[], handleClose: () => void, handleSubMenuClick: (event: React.MouseEvent<HTMLElement>) => void, subMenuAnchorEl: HTMLElement | null) => {
     return items.map(({ label, path, type, children }, index) => {
         if (type === 'nav') {
             return (

@@ -2,13 +2,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import Image from 'next/image';
 import 'swiper/css/navigation';
+import theme from '@/app/styles/theme';
 import { useRef, useState } from 'react';
-import theme from '@/app/components/ui/theme';
 import { Pagination, Navigation } from 'swiper/modules';
+import { Box, IconButton, styled } from '@mui/material';
 import CarouselSample from '@/app/images/CarouselSample.png';
 import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
+import Title from '@/app/components/ui/common/Typography/Title';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
-import { Box, IconButton, styled, Typography } from '@mui/material';
+import SubTitle from '@/app/components/ui/common/Typography/Subtitle';
 import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
 import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
 
@@ -66,18 +68,10 @@ const EmbraceWellness = () => {
         <SectionPadding>
             <SectionContent>
                 <Box>
-                    <Typography
-                        variant="h2"
-                        sx={{
-                            textAlign: 'center',
-                            [theme.breakpoints.down('md')]: {
-                                fontSize: '24px',
-                            },
-                        }}
-                    >
+                    <Title>
                         Embrace Wellness: <br />
                         Our Yoga Story
-                    </Typography>
+                    </Title>
                     <Box
                         sx={{
                             display: 'flex',
@@ -94,26 +88,20 @@ const EmbraceWellness = () => {
                         }}
                     >
                         <Box sx={{ maxWidth: '100%', position: 'relative' }}>
-                            <Typography
+                            <SubTitle
                                 sx={{
-                                    fontSize: '24px',
                                     color: '#000',
                                     marginTop: '34px',
                                     [theme.breakpoints.down('md')]: {
-                                        fontSize: '18px',
                                         marginTop: '0px',
                                     },
                                 }}
                             >
-                                Embrace Wellness: Our Yoga Story at Athayog Living is devoted to preserving the
-                                long-standing legacy of Yog (Yoga) by integrating its true purpose, philosophies, and
-                                practices into modern daily life. We aim to illuminate and educate by sharing
-                                transformational tools that help you reconnect with your true nature, encouraging change
-                                towards higher living. When you register with us, we offer free consultations,
-                                suggesting lifestyle changes to help you embrace a complete Yogic lifestyle. Athayog
-                                Living empowers you to progress on your journey by entrusting you to practice on your
-                                own, embedding ancient Yogic wisdom into your modern day reality.
-                            </Typography>
+                                Embrace Wellness: Our Yoga Story at Athayog Living is devoted to preserving the long-standing legacy of Yog (Yoga) by integrating its true purpose, philosophies, and
+                                practices into modern daily life. We aim to illuminate and educate by sharing transformational tools that help you reconnect with your true nature, encouraging change
+                                towards higher living. When you register with us, we offer free consultations, suggesting lifestyle changes to help you embrace a complete Yogic lifestyle. Athayog
+                                Living empowers you to progress on your journey by entrusting you to practice on your own, embedding ancient Yogic wisdom into your modern day reality.
+                            </SubTitle>
                             <Box
                                 sx={{
                                     display: 'flex',
@@ -162,11 +150,7 @@ const EmbraceWellness = () => {
                                 onInit={handleSwiperInit}
                                 ref={swiperRef}
                                 className="swiper-yoga"
-                                style={
-                                    isLoading
-                                        ? { display: 'none' }
-                                        : { height: '510px', marginLeft: '0', marginRight: '0px', paddingRight: '70px' }
-                                }
+                                style={isLoading ? { display: 'none' } : { height: '510px', marginLeft: '0', marginRight: '0px', paddingRight: '70px' }}
                             >
                                 <SwiperSlide>
                                     <Box
@@ -179,12 +163,7 @@ const EmbraceWellness = () => {
                                             overflow: 'hidden',
                                         }}
                                     >
-                                        <Image
-                                            src={CarouselSample}
-                                            fill
-                                            style={{ objectFit: 'cover' }}
-                                            alt="Carousel Sample"
-                                        />
+                                        <Image src={CarouselSample} fill style={{ objectFit: 'cover' }} alt="Carousel Sample" />
                                     </Box>
                                 </SwiperSlide>
                                 <SwiperSlide>
@@ -198,12 +177,7 @@ const EmbraceWellness = () => {
                                             overflow: 'hidden',
                                         }}
                                     >
-                                        <Image
-                                            src={CarouselSample}
-                                            fill
-                                            style={{ objectFit: 'cover' }}
-                                            alt="Carousel Sample"
-                                        />
+                                        <Image src={CarouselSample} fill style={{ objectFit: 'cover' }} alt="Carousel Sample" />
                                     </Box>
                                 </SwiperSlide>
                                 <SwiperSlide>
@@ -217,12 +191,7 @@ const EmbraceWellness = () => {
                                             overflow: 'hidden',
                                         }}
                                     >
-                                        <Image
-                                            src={CarouselSample}
-                                            fill
-                                            style={{ objectFit: 'cover' }}
-                                            alt="Carousel Sample"
-                                        />
+                                        <Image src={CarouselSample} fill style={{ objectFit: 'cover' }} alt="Carousel Sample" />
                                     </Box>
                                 </SwiperSlide>
                                 <SwiperSlide>
@@ -236,12 +205,7 @@ const EmbraceWellness = () => {
                                             overflow: 'hidden',
                                         }}
                                     >
-                                        <Image
-                                            src={CarouselSample}
-                                            fill
-                                            style={{ objectFit: 'cover' }}
-                                            alt="Carousel Sample"
-                                        />
+                                        <Image src={CarouselSample} fill style={{ objectFit: 'cover' }} alt="Carousel Sample" />
                                     </Box>
                                 </SwiperSlide>
                             </Swiper>
