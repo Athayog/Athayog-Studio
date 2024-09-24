@@ -3,17 +3,16 @@ import React from 'react';
 
 interface TitleProps {
     children: React.ReactNode;
-    textAlign?: string;
     sx?: SxProps;
 }
 
-const Title: React.FC<TitleProps> = ({ children, textAlign = 'center', sx }) => {
+const Title: React.FC<TitleProps> = ({ children, sx }) => {
     return (
         <Typography
             sx={{
                 fontSize: { xs: '24px', md: '48px' },
                 fontWeight: '700',
-                textAlign,
+                textAlign: 'center',
                 ...sx,
             }}
         >

@@ -25,9 +25,9 @@ const YogaArambha = () => {
                 >
                     <Box sx={{ maxWidth: '550px', position: 'relative' }}>
                         <Title
-                            textAlign="left"
                             sx={{
                                 color: '#202020',
+                                textAlign: 'left',
                                 [theme.breakpoints.down('md')]: {
                                     marginTop: '0px',
                                 },
