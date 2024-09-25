@@ -100,6 +100,7 @@ const FAQ: React.FC = () => {
                                 transition: 'min-height 0.3s',
                                 minHeight: expanded === index ? '200px' : '100px', // Ensure a consistent height when collapsed/expanded
                                 position: 'relative',
+
                                 width: '942px', // Fixed width to prevent layout shift
                                 [theme.breakpoints.down('md')]: {
                                     width: '100%', // Fixed width to prevent layout shift
@@ -121,6 +122,7 @@ const FAQ: React.FC = () => {
                                     variant="body1"
                                     sx={{
                                         color: '#202020',
+                                        fontSize: '24px',
                                         [theme.breakpoints.down('md')]: {
                                             fontSize: '15px',
                                         },

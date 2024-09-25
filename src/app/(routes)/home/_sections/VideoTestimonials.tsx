@@ -1,9 +1,10 @@
-import { Box, IconButton, styled, Typography } from '@mui/material';
-import { YouTubeEmbed } from '@next/third-parties/google';
 import Image from 'next/image';
 import { useState } from 'react';
-import { SectionContent, SectionPadding } from '../../../components/ui/pages/home/styles/Layout';
-import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
+import ArrowLeft from '@/app/images/home/ArrowLeft.svg';
+import ArrowRight from '@/app/images/home/ArrowRight.svg';
+import { YouTubeEmbed } from '@next/third-parties/google';
+import { Box, IconButton, styled, Typography } from '@mui/material';
+import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
 
 const Wrapper = styled(Box)(({}) => ({
     height: 'auto',
@@ -188,11 +189,7 @@ function VideoTestimonials() {
                             </Box>
                             <Box sx={{ position: 'absolute', left: '280px', top: '-50px' }}>
                                 <EmbeddYoutube>
-                                    <YouTubeEmbed
-                                        style="height: 520px;"
-                                        videoid={videos[currentVideoIndex].videoID}
-                                        params="controls=0"
-                                    />
+                                    <YouTubeEmbed style="height: 520px;" videoid={videos[currentVideoIndex].videoID} params="controls=0" />
                                 </EmbeddYoutube>
                             </Box>
                             <Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -237,19 +234,15 @@ function VideoTestimonials() {
                     </VideoContainer>
 
                     <EmbeddYoutubeMobile>
-                        <YouTubeEmbed
-                            style="height: 520px;"
-                            videoid={videos[currentVideoIndex].videoID}
-                            params="controls=0"
-                        />
+                        <YouTubeEmbed style="height: 520px;" videoid={videos[currentVideoIndex].videoID} params="controls=0" />
                     </EmbeddYoutubeMobile>
 
                     <ButtonGroup>
                         <StyledIconButton onClick={handlePrevClick}>
-                            <ArrowBackIos />
+                            <ArrowLeft />
                         </StyledIconButton>
                         <StyledIconButton onClick={handleNextClick}>
-                            <ArrowForwardIos />
+                            <ArrowRight />
                         </StyledIconButton>
                     </ButtonGroup>
                 </Wrapper>

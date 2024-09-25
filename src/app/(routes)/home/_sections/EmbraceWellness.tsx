@@ -9,10 +9,11 @@ import { Box, IconButton, styled } from '@mui/material';
 import CarouselSample from '@/app/images/CarouselSample.png';
 import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
 import Title from '@/app/components/ui/common/Typography/Title';
-import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
 import SubTitle from '@/app/components/ui/common/Typography/Subtitle';
 import RegisterButton from '@/app/components/ui/common/elements/button/RegisterButton';
 import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
+import ArrowLeft from '@/app/images/home/ArrowLeft.svg';
+import ArrowRight from '@/app/images/home/ArrowRight.svg';
 
 const AthayogSwiper = styled(Box)(() => ({
     '.swiper-yoga': {
@@ -119,9 +120,9 @@ const EmbraceWellness = () => {
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                     }}
-                                    onClick={() => swiperRef?.current?.swiper.slideNext()}
+                                    onClick={() => swiperRef?.current?.swiper.slidePrev()}
                                 >
-                                    <ArrowBackIos />
+                                    <ArrowLeft />
                                 </IconButton>
                                 <IconButton
                                     sx={{
@@ -130,9 +131,9 @@ const EmbraceWellness = () => {
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                     }}
-                                    onClick={() => swiperRef?.current?.swiper.slidePrev()}
+                                    onClick={() => swiperRef?.current?.swiper.slideNext()}
                                 >
-                                    <ArrowForwardIos />
+                                    <ArrowRight />
                                 </IconButton>
                             </Box>
                         </Box>
@@ -147,6 +148,7 @@ const EmbraceWellness = () => {
                                     nextEl: '.swiper-button-next',
                                     prevEl: '.swiper-button-prev',
                                 }}
+                                loop={true}
                                 onInit={handleSwiperInit}
                                 ref={swiperRef}
                                 className="swiper-yoga"

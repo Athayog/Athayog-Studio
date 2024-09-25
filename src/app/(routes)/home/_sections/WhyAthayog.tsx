@@ -1,14 +1,16 @@
 import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import Image from 'next/image';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { useRef, useState } from 'react';
-import { Pagination, Navigation } from 'swiper/modules';
-import { Box, IconButton, Skeleton, Typography, styled } from '@mui/material';
+import ArrowLeft from '@/app/images/home/ArrowLeft.svg';
+import { Navigation, Pagination } from 'swiper/modules';
+import ArrowRight from '@/app/images/home/ArrowRight.svg';
 import CarouselSample from '@/app/images/CarouselSample.png';
-import { Swiper, SwiperSlide, SwiperRef } from 'swiper/react';
+import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { ArrowBackIos, ArrowForwardIos } from '@mui/icons-material';
-import { SectionPadding, SectionContent } from '../../../components/ui/pages/home/styles/Layout';
+import { Box, IconButton, Skeleton, Typography, styled } from '@mui/material';
+import { SectionContent, SectionPadding } from '@/app/components/ui/pages/home/styles/Layout';
 
 // Styled components using MUI's styled
 const Container = styled(Box)(({ theme }) => ({
@@ -164,8 +166,7 @@ const WhyAthayog = () => {
                         <Title>Why Athayog?</Title>
                         <Subtitle>Experienced and caring teachers</Subtitle>
                         <Description>
-                            The instructors at Athayog are professional, attentive, caring and focus on the individual.
-                            They are passionate about yoga and have a deep understanding of the practice.
+                            The instructors at Athayog are professional, attentive, caring and focus on the individual. They are passionate about yoga and have a deep understanding of the practice.
                         </Description>
                         <ButtonGroup>
                             <StyledIconButton onClick={() => swiperRef?.current?.swiper.slidePrev()}>
@@ -197,13 +198,7 @@ const WhyAthayog = () => {
                                 .map((_, index) => (
                                     <SwiperSlide key={index}>
                                         <SwiperImageBox>
-                                            <Image
-                                                src={CarouselSample}
-                                                fill
-                                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                                style={{ objectFit: 'cover' }}
-                                                alt="Carousel Sample"
-                                            />
+                                            <Image src={CarouselSample} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" style={{ objectFit: 'cover' }} alt="Carousel Sample" />
                                         </SwiperImageBox>
                                     </SwiperSlide>
                                 ))}
@@ -211,10 +206,10 @@ const WhyAthayog = () => {
                     </AthayogSwiper>
                     <ButtonGroupBottom>
                         <StyledIconButton onClick={() => swiperRef?.current?.swiper.slidePrev()}>
-                            <ArrowBackIos />
+                            <ArrowLeft />
                         </StyledIconButton>
                         <StyledIconButton onClick={() => swiperRef?.current?.swiper.slideNext()}>
-                            <ArrowForwardIos />
+                            <ArrowRight />
                         </StyledIconButton>
                     </ButtonGroupBottom>
                 </Container>

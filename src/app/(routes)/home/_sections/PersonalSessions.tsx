@@ -46,6 +46,7 @@ const Title = styled(Typography)(({ theme }) => ({
     '& span': {
         color: '#016B5F',
     },
+    fontWeight: '700',
     [theme.breakpoints.down('md')]: {
         fontSize: '32px',
         textAlign: 'left',
@@ -69,6 +70,8 @@ const TitleMobile = styled(Typography)(({ theme }) => ({
 
 const Description = styled(Typography)(({ theme }) => ({
     textAlign: 'end',
+    fontWeight: '400',
+    fontSize: '24px',
     [theme.breakpoints.down('md')]: {
         fontSize: '18px',
         textAlign: 'left',
@@ -106,9 +109,8 @@ const PersonalSessions: React.FC = () => {
                             <Image width={156} alt="Personal Session Image" src={PersonalSessionImage} />
                         </ImageWrapperMobile>
                         <Description variant="body1">
-                            Stay focused on your yoga practice and embrace change with Athayog Personal Sessions. These
-                            sessions offer a customised and structured approach, tailored to your needs, helping you
-                            break old patterns and progress on your journey.
+                            Stay focused on your yoga practice and embrace change with Athayog Personal Sessions. These sessions offer a customised and structured approach, tailored to your needs,
+                            helping you break old patterns and progress on your journey.
                         </Description>
                         <StyledButton>Register Now</StyledButton>
                     </ContentBox>
