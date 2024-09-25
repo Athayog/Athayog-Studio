@@ -52,6 +52,7 @@ const Title = styled(Typography)(({ theme }) => ({
     color: '#1E6F00',
     width: '100%',
     textAlign: 'end',
+    fontWeight: 700,
     [theme.breakpoints.down('md')]: {
         fontSize: '32px',
         textAlign: 'center',
@@ -62,6 +63,8 @@ const Title = styled(Typography)(({ theme }) => ({
 const Subtitle = styled(Typography)(({ theme }) => ({
     textAlign: 'end',
     maxWidth: '474px',
+    fontSize: '34px',
+    fontWeight: 700,
     [theme.breakpoints.down('md')]: {
         fontSize: '24px',
         textAlign: 'center',
@@ -72,6 +75,7 @@ const Subtitle = styled(Typography)(({ theme }) => ({
 const Description = styled(Typography)(({ theme }) => ({
     textAlign: 'end',
     maxWidth: '600px',
+    fontSize: '24px',
     [theme.breakpoints.down('md')]: {
         fontSize: '18px',
         fontWeight: '400',
@@ -165,12 +169,7 @@ const YogaAcademy: React.FC = () => {
                             {[...Array(4)].map((_, index) => (
                                 <SwiperSlide key={index}>
                                     <SwiperContainer>
-                                        <Image
-                                            src={CarouselSample}
-                                            fill
-                                            style={{ objectFit: 'cover' }}
-                                            alt="Carousel Sample"
-                                        />
+                                        <Image src={CarouselSample} fill style={{ objectFit: 'cover' }} alt="Carousel Sample" />
                                     </SwiperContainer>
                                 </SwiperSlide>
                             ))}
@@ -182,9 +181,8 @@ const YogaAcademy: React.FC = () => {
                             Teachers Training Course <br /> RYT 200 Certification Course
                         </Subtitle>
                         <Description variant="body1">
-                            Transform into a certified Yoga professional with our online International Certificate
-                            Program accredited by Yoga Alliance USA. Elevate your career and build your brand as a Yoga
-                            Coach.
+                            Transform into a certified Yoga professional with our online International Certificate Program accredited by Yoga Alliance USA. Elevate your career and build your brand as
+                            a Yoga Coach.
                         </Description>
                         <StyledButton>Register Now</StyledButton>
                     </ContentBox>

@@ -8,6 +8,8 @@ import { Box, Button, TableRow, TableBody, TableContainer, TableHead, Paper, Typ
 const Title = styled(Typography)(({ theme }) => ({
     marginBottom: '20px',
     textAlign: 'end',
+    fontSize: '48px',
+    fontWeight: 700,
     [theme.breakpoints.down('md')]: {
         fontSize: '32px',
         textAlign: 'center',

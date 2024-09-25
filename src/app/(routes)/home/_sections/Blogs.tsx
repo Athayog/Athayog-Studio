@@ -78,6 +78,8 @@ const SwiperStyled = styled(Swiper)(({ theme }) => ({
 const Title = styled(Typography)(({ theme }) => ({
     textAlign: 'center',
     maxWidth: '900px',
+    fontWeight: 700,
+    fontSize: '48px',
     margin: '0 auto',
     [theme.breakpoints.down('md')]: {
         fontSize: '24px',
@@ -176,12 +178,7 @@ function Blogs() {
                                 <SwiperSlide key={index}>
                                     <StyledCard>
                                         <CardImageContainer>
-                                            <Image
-                                                src={blog.image}
-                                                fill
-                                                style={{ objectFit: 'cover' }}
-                                                alt={blog.title}
-                                            />
+                                            <Image src={blog.image} fill style={{ objectFit: 'cover' }} alt={blog.title} />
                                         </CardImageContainer>
 
                                         <CardContent>
@@ -192,16 +189,10 @@ function Blogs() {
                                                     alignItems: 'center',
                                                 }}
                                             >
-                                                <Typography sx={{ fontSize: '16px', fontWeight: '400' }}>
-                                                    {blog.type}
-                                                </Typography>
-                                                <Typography sx={{ fontSize: '16px', fontWeight: '400' }}>
-                                                    {blog.readTime}
-                                                </Typography>
+                                                <Typography sx={{ fontSize: '16px', fontWeight: '400' }}>{blog.type}</Typography>
+                                                <Typography sx={{ fontSize: '16px', fontWeight: '400' }}>{blog.readTime}</Typography>
                                             </Box>
-                                            <Typography sx={{ fontSize: '24px', fontWeight: '700', marginTop: '12px' }}>
-                                                {blog.title}
-                                            </Typography>
+                                            <Typography sx={{ fontSize: '24px', fontWeight: '700', marginTop: '12px' }}>{blog.title}</Typography>
                                             <Typography variant="body1">{blog.content}</Typography>
                                             <Button sx={{ width: '150px', marginTop: '20px' }} variant="contained">
                                                 Read More

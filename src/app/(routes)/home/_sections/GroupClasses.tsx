@@ -46,13 +46,11 @@ const Description = styled(Typography)(({ theme }) => ({
     textAlign: 'center',
     marginTop: '30px',
     maxWidth: '800px',
+    fontSize: '24px',
     margin: '30px auto 0 auto',
     [theme.breakpoints.down('md')]: {
         fontSize: '18px',
         margin: '16px auto 0 auto',
-    },
-    strong: {
-        fontStyle: 'italic',
     },
 }));
 
@@ -78,9 +76,8 @@ function GroupClasses() {
                         <Image src={CarouselSample} fill style={{ objectFit: 'cover' }} alt="Carousel Sample" />
                     </ImageContainer>
                     <Description>
-                        Join our group yoga sessions to improve your well-being. Connect with a supportive community and
-                        find <strong>balance in mind body,</strong> and <strong>soul</strong>. Start your journey to a
-                        healthier life with us today.
+                        Join our group yoga sessions to improve your well-being. Connect with a supportive community and find <strong>balance in mind body,</strong> and <strong>soul</strong>. Start
+                        your journey to a healthier life with us today.
                     </Description>
                     <RegisterActionButton variant="contained">Register Now</RegisterActionButton>
                 </Container>

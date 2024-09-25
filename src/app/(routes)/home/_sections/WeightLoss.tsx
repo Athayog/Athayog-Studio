@@ -25,6 +25,7 @@ const Title = styled(Typography)(({ theme }) => ({
     '& span': {
         color: '#D06700',
     },
+    fontWeight: '700',
     [theme.breakpoints.down('md')]: {
         fontSize: '32px',
         textAlign: 'left',
@@ -34,6 +35,7 @@ const Title = styled(Typography)(({ theme }) => ({
 
 const Description = styled(Typography)(({ theme }) => ({
     textAlign: 'start',
+    fontSize: '24px',
     [theme.breakpoints.down('md')]: {
         fontSize: '18px',
         fontWeight: '400',
@@ -81,8 +83,7 @@ const WeightLoss: React.FC = () => {
                             <Image width={300} alt="Weight Loss Image" src={WeightLossImage} />
                         </ImageWrapperMobile>
                         <Description variant="body1">
-                            This 3-month program at Athayog offers a holistic approach to weight loss, helping you
-                            achieve lasting results through Asana practice and personalized support.
+                            This 3-month program at Athayog offers a holistic approach to weight loss, helping you achieve lasting results through Asana practice and personalized support.
                         </Description>
                         <StyledButton>Register Now</StyledButton>
                     </ContentBox>
