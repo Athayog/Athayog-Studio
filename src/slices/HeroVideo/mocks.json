@@ -1,0 +1,29 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"button": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Start Your Yoga Journey"
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "asdasdasd"
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "asdasdasdasd"
+			},
+			"videourl": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "https://firebasestorage.googleapis.com/v0/b/development-v2-53228.appspot.com/o/Source.mp4?alt=media&token=21146d35-db54-4c9f-abf5-911484322bc8"
+			}
+		},
+		"items": []
+	}
+]

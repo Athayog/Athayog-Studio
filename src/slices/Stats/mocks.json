@@ -1,0 +1,148 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"graduates": {
+				"__TYPE__": "FieldContent",
+				"value": "enemy",
+				"type": "Text"
+			},
+			"athayogis": {
+				"__TYPE__": "FieldContent",
+				"value": "great",
+				"type": "Text"
+			},
+			"transformations": {
+				"__TYPE__": "FieldContent",
+				"value": "plus",
+				"type": "Text"
+			},
+			"events": {
+				"__TYPE__": "FieldContent",
+				"value": "sent",
+				"type": "Text"
+			},
+			"graduatescount": {
+				"__TYPE__": "FieldContent",
+				"type": "Number",
+				"value": "11"
+			},
+			"athayogiscount": {
+				"__TYPE__": "FieldContent",
+				"type": "Number",
+				"value": "23"
+			},
+			"transformationscount": {
+				"__TYPE__": "FieldContent",
+				"type": "Number",
+				"value": "34"
+			},
+			"eventscount": {
+				"__TYPE__": "FieldContent",
+				"type": "Number",
+				"value": "54"
+			},
+			"statename": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"name",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Athayis"
+								}
+							],
+							[
+								"count",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Number",
+									"value": "15"
+								}
+							],
+							[
+								"icon",
+								{
+									"__TYPE__": "ImageContent",
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1603824231744-517ef271df7e?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MjczMzIwODN8MA&ixlib=rb-4.0.3&q=85&rect=0,5,3690,2460&w=45&h=30",
+									"alt": "sliced lemon fruit on blue surface",
+									"origin": {
+										"id": "SDX4_TQcxGU",
+										"url": "https://images.unsplash.com/photo-1603824231744-517ef271df7e?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxjaXRydXMlMjBmcnVpdHxlbnwwfHx8fDE3MjczMzIwODN8MA&ixlib=rb-4.0.3&q=85",
+										"width": 3690,
+										"height": 2470
+									},
+									"width": 45,
+									"height": 30,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 5
+										}
+									},
+									"thumbnails": {}
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"name",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Graduates"
+								}
+							],
+							[
+								"count",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Number",
+									"value": "500"
+								}
+							],
+							[
+								"icon",
+								{
+									"__TYPE__": "ImageContent",
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1633409361618-c73427e4e206?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxzdmd8ZW58MHx8fHwxNzI3MzY3NzE3fDA&ixlib=rb-4.0.3&q=85&rect=0,0,10800,10800&w=45&h=45",
+									"alt": "a rubik cube is shown on a white background",
+									"origin": {
+										"id": "fd6K_OFlnRA",
+										"url": "https://images.unsplash.com/photo-1633409361618-c73427e4e206?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwzfHxzdmd8ZW58MHx8fHwxNzI3MzY3NzE3fDA&ixlib=rb-4.0.3&q=85",
+										"width": 10800,
+										"height": 10800
+									},
+									"width": 45,
+									"height": 45,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									},
+									"thumbnails": {}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

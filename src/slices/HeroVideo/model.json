@@ -1,0 +1,47 @@
+{
+  "id": "hero_video",
+  "type": "SharedSlice",
+  "name": "HeroVideo",
+  "description": "HeroVideo",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "button": {
+          "type": "Text",
+          "config": {
+            "label": "Button",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": ""
+          }
+        },
+        "videourl": {
+          "type": "Text",
+          "config": {
+            "label": "VideoURL",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

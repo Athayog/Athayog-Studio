@@ -1,9 +1,11 @@
 import '@/app/styles/globals.css';
 import type { Metadata } from 'next';
 import theme from '@/app/styles/theme';
-import { ThemeProvider } from '@mui/material';
 import NextTopLoader from 'nextjs-toploader';
+import { repositoryName } from '@/prismicio';
+import { ThemeProvider } from '@mui/material';
 import { Josefin_Sans } from 'next/font/google';
+import { PrismicPreview } from '@prismicio/next';
 import CssBaseline from '@mui/material/CssBaseline';
 import Navbar from '@/app/components/ui/common/Navigation/Index';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
@@ -34,6 +36,7 @@ export default function RootLayout({
                         <div id="scroll-target" />
                         <Navbar />
                         {children}
+                        <PrismicPreview repositoryName={repositoryName} />
                     </ThemeProvider>
                 </AppRouterCacheProvider>
             </body>
