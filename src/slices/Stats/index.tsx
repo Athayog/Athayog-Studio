@@ -64,7 +64,7 @@ const StatName = styled(Typography)(({ theme }) => ({
     },
 }));
 
-const statsData: Stat[] = [
+const statsData = [
     {
         id: 1,
         name: 'Graduates',
